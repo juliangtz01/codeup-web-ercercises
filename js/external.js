@@ -48,6 +48,6 @@ if(isClassFull === false && isScheduleConflict === false)
 }
 else
 {
-    alert("Sorry, but you are not ");
+    alert("Sorry, but you are not able to enroll to the class!");
 }
 
