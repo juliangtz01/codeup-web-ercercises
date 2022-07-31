@@ -10,13 +10,8 @@
  */
 function sayHello(name)
 {
-    //var theMessage;
-    return console.log("Hello " + name);
+    return "Hello " + name;
 }
-
-var name = prompt("What is your name?");
-
-sayHello(name);
 
 /**
  * TODO:
@@ -36,8 +31,7 @@ console.log(helloMessage);
  * console.
  */
 var myName = "Julian";
-
-sayHello(myName);
+console.log(sayHello(myName));
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
@@ -62,15 +56,11 @@ var random = Math.floor((Math.random() * 3) + 1);
  */
 function isTwo(number)
 {
-    var result = (number === 2);
-
-    return result;
+    return number === 2;
 }
-//generate a random number from 1 - 10
-var randomNumber = Math.floor(Math.random() * 10) + 1;
 
-console.log("The randome number is " + randomNumber);
-console.log(isTwo(randomNumber));
+//console.log(random);
+console.log(isTwo(random));
 
 
 /**
@@ -102,7 +92,8 @@ console.log(calculateTip(0.15, 33.42));
  */
 
 var myBill = prompt("How much is your bill?");
-var tipPercent = prompt("How much is the tip percentage?");
+var tipPercent = prompt("How much is the tip percentage, for example a 15% tip " +
+    "would be 0.15?");
 
 alert("The amount you should tip is $" + calculateTip(tipPercent, myBill).toFixed(2));
 
