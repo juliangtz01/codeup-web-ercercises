@@ -6,39 +6,39 @@
      * Create an array of 4 people's names and store it in a variable called
      * 'names'.
      */
-var names = ['Angie', 'Bertha', 'Hilda', 'Yolanda'];
+    var names = ['Julian', 'Miguel', 'Julius', 'Romeo'];
     /**
      * TODO:
      * Create a log statement that will log the number of elements in the names
      * array.
      */
-console.log(names.length);
+    console.log(names.length);
     /**
      * TODO:
      * Create log statements that will print each of the names individually by
      * accessing each element's index.
      */
-for(var x = 0; x < names.length; x++)
-{
-    console.log(names[x] + " is index " + x);
-}
+    console.log("\b");
+    for(var x = 0; x < names.length; x++)
+    {
+        console.log(names[x] + " is index " + x);
+    }
     /**
      * TODO:
      * Write some code that uses a for loop to log every item in the names
      * array.
      */
-for(var x = 0; x < names.length; x++)
-{
-    console.log(names[x]);
-}
+    console.log("\b");
+    for(var x = 0; x < names.length; x++)
+    {
+        console.log(names[x]);
+    }
     /**
      * TODO:
      * Refactor your above code to use a `forEach` loop
      */
-// names.forEach((theNames))
-//     {
-//         console.log(theNames);
-//     }
+    console.log("\b");
+    names.forEach(element => console.log(element));
     /**
      * TODO:
      * Create the following three functions, each will accept an array and
@@ -52,22 +52,23 @@ for(var x = 0; x < names.length; x++)
      *  > second([1, 2, 3, 4, 5]) // returns 2
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
+    console.log("\b");
+
 
     function first(itemArray)
     {
-        console.log(itemArray.indexOf(0));
+        console.log(itemArray[0]);
     }
 
     function second(itemArray)
     {
-        console.log(itemArray.indexOf(1));
+        console.log(itemArray[1]);
     }
 
     function last(itemArray)
     {
-        console.log(itemArray.indexOf(itemArray.length - 1));
+        console.log(itemArray[itemArray.length - 1]);
     }
-
     var myArray = [1,2,3,4,5];
 
     first(myArray);
