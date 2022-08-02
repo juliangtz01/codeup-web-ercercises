@@ -203,9 +203,9 @@ var isUserEnteringNumber = confirm("Would you like to enter a number");
 
 if(isUserEnteringNumber)
 {
-    var theNumber = prompt("Please enter a number:");
+    var theNumber = Number(prompt("Please enter a number:"));
 
-    if(!isNaN(Number(theNumber)))
+    if(!isNaN(theNumber))
     {
         if(theNumber % 2 === 0)
         {
@@ -216,16 +216,16 @@ if(isUserEnteringNumber)
             alert("Your number is odd!");
         }
 
-        var theResult = 100 + Number(theNumber);
+        var theResult = 100 + theNumber;
 
-        if(Number(theNumber) >=0)
+        if(theNumber >=0)
         {
             alert("100 + " + theNumber + " is: " + theResult);
             alert("Your number is positive");
         }
         else
         {
-            alert("100 - " + Math.abs(Number(theNumber)) + " is: " + theResult);
+            alert("100 - " + Math.abs(theNumber) + " is: " + theResult);
             alert("Your number is negative");
         }
     }
