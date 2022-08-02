@@ -118,19 +118,14 @@ function calculateTotal(luckyNumber, total)
     {
         case 0:
             return total;
-            break;
         case 1:
             return total * 0.10;
-            break;
         case 2:
             return total * 0.25;
-            break;
         case 3:
             return total * 0.35;
-            break;
         case 4:
             return total * 0.50;
-            break;
         default:
             return 100;
     }
