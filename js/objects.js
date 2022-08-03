@@ -135,9 +135,21 @@
      */
      console.log("\b");
 
-     // function createBook(title, author)
-     // {
-     //
-     // }
+     function createBook(title, firstName, lastName)
+     {
+        var bookInfo = [{theTitle: title, theFirstName: firstName, theLastName: lastName}];
+
+        return bookInfo;
+     }
+
+     function showBookInfo(info)
+     {
+         info.forEach((item, index) =>{
+                 console.log(`Book # ${index + 1}\n`+
+                     `Title: ${item.theTitle}\nAuthor: ${item.theFirstName} ${item.theLastName}`);
+         });
+     }
+
+     showBookInfo(createBook("If You Really Loved Me", "Ann", "Rule"))
 
 })();
