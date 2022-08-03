@@ -127,10 +127,12 @@ function calculateTotal(luckyNumber, total)
         case 4:
             return total * 0.50;
         default:
-            return 100;
+            return 0;
     }
 }
+console.log(calculateTotal(0, 100));
 console.log(calculateTotal(4, 100));
+console.log(calculateTotal(5, 100));
 
 /**
  * TODO:
@@ -170,7 +172,7 @@ console.log(calculateTotal(4, 100));
              alert("You get a " + percentOfDiscount + "% discount, and your final bill is $" + grandTotal.toFixed(2) + "!");
              break;
          default:
-             alert("Congratulations, you get a " + discount + "% discount, you get everything for free!!!");
+             alert("Congratulations, you get a 100% discount, you get everything for free!!!");
      }
  }
 

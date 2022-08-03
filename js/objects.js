@@ -61,9 +61,10 @@
     shoppers.forEach((item, index) => {
         let discount = Number(item.amount) * 0.12;
         let total = Number(item.amount) - discount;
-        console.log(item.amount > 200 ? `${item.name} spent $${Number(item.amount).toFixed(2)} and got a discount of $${discount.toFixed(2)}, 
-the total amount paid for the purchase was $${total.toFixed(2)}`:
+        console.log(item.amount > 200 ? `${item.name} spent $${Number(item.amount).toFixed(2)} and got a discount of $${discount.toFixed(2)},\n`+
+        `the total amount paid for the purchase was $${total.toFixed(2)}`:
         `${item.name} spent $${Number(item.amount).toFixed(2)} and did not get a discount`);
+        console.log("\b")
     });
 
     /** TODO:
@@ -78,7 +79,6 @@ the total amount paid for the purchase was $${total.toFixed(2)}`:
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
-    console.log("\b");
 
     var books = [
         {title: 'The Devil Wears Prada', author:{firstName : 'Lauren', lastName: 'Weisberger'}},
