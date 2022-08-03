@@ -11,11 +11,11 @@ function showMultiplicationTable(number)
 {
     for(let x = 1; x < 11; x++)
     {
-        console.log("7 x " + x + " = " + x * 7);
+        console.log(number + " x " + x + " = " + x * number);
     }
 }
 
-showMultiplicationTable(7);
+showMultiplicationTable(5);
 
 /**
  * 3.
@@ -33,7 +33,7 @@ console.log("\b");
 
 for(let x = 0; x < 10; x++)
 {
-    let random = Math.floor(Math.random() * 200) + 20;
+    let random = Math.floor(Math.random() * 180) + 20;
     console.log(random % 2 === 0 ? random + " is even" : random + " is odd");
 }
 

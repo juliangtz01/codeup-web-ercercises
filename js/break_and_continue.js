@@ -46,13 +46,13 @@ do
 {
     numberToSkip = Number(prompt("Please enter an odd number from 1 - 50:"));
 
-    if(numberToSkip < 1 || numberToSkip > 50 || numberToSkip % 2 === 0)
+    if(numberToSkip < 1 || numberToSkip > 50 || numberToSkip % 2 === 0 || isNaN(numberToSkip))
     {
         alert("The number is not an odd number from 1 - 50");
     }
     else
         break;
-}while(numberToSkip < 1 || numberToSkip > 50 || numberToSkip % 2 === 0);
+}while(numberToSkip < 1 || numberToSkip > 50 || numberToSkip % 2 === 0 || isNaN(numberToSkip));
 
 console.log("Number to skip is: " + numberToSkip + "\b");
 
