@@ -18,7 +18,7 @@
 //This is how you get a random number between 50 and 100
 var allCones = Math.floor(Math.random() * 50) + 50;
 
-console.log(allCones + " to sell");
+console.log(allCones + " cones to sell");
 
 console.log("\b");
 

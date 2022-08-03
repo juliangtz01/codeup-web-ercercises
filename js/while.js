@@ -17,12 +17,12 @@
  * 8192
  * 16384
  * 32768
- * 65636
+ * 65536
  */
 
 var num = 1;
 
-while(num != 65536)
+while(num < 65536)
 {
     num *= 2;
     console.log(num);
