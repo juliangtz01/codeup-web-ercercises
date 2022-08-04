@@ -11,7 +11,13 @@
      * console.log planetsArray to check your work
      */
     planetsArray = planetsString.split('|');
-    console.log(planetsArray);
+
+    planetsArray.forEach(function(planetArray)
+    {
+        console.log(planetArray);
+    });
+
+    console.log("\b");
 
     /**
      * TODO:
@@ -26,8 +32,10 @@
 
     planetsArray.forEach(function(planet)
     {
-        console.log("<br>" + planet);
+        console.log(planet + "<br>");
     });
+
+    console.log("\b");
 
     planetsArray.forEach(function(planets)
     {
