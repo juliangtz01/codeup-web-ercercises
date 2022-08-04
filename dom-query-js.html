@@ -34,10 +34,10 @@
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
         var mainHeaderBtn = document.createElement("button");
         mainHeaderBtn.innerHTML = "Change the Main Header";
-        mainHeaderBtn.onclick = function()
+        mainHeaderBtn.addEventListener("click", () =>
         {
             mainHeader.innerHTML = "Javascript is cool";
-        };
+        });
         document.body.appendChild(mainHeaderBtn);
         // TODO: Uncomment the next line and get the sub header element by id
         var subHeader = document.getElementById('sub-header');
@@ -45,10 +45,10 @@
         // TODO: Set the text color of subHeader to blue
         var subHeaderBtn = document.createElement("button");
         subHeaderBtn.innerHTML = "Change The Sub Header Color";
-        subHeaderBtn.onclick = function()
+        subHeaderBtn.addEventListener("click", () =>
         {
             subHeader.style.color = '#0000FF';
-        };
+        });
         document.body.appendChild(subHeaderBtn);
         // TODO: Uncomment the next line and get all list items
         var listItems = document.getElementsByTagName('li');
@@ -71,10 +71,10 @@
         // TODO: Set text color of li with dbid = 1 to blue
         var listItemBtn2 = document.createElement("button");
         listItemBtn2.innerHTML = "Change Item 1 to Blue";
-        istItemBtn2.onclick = function ()
+        listItemBtn2.addEventListener("click", () =>
         {
             listItems[0].style.color = '#0000FF';
-        };
+        });
         document.body.appendChild(listItemBtn2);
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         var subParagraphs = document.getElementsByClassName('sub-paragraph');
@@ -82,10 +82,10 @@
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
         var changeParagraph = document.createElement("button");
         changeParagraph.innerHTML = "Change the Paragraph";
-        changeParagraph.onclick = function()
+        changeParagraph.addEventListener("click", () =>
         {
             subParagraphs[0].innerHTML = "Mission Accomplished";
-        };
+        });
         document.body.appendChild(changeParagraph);
     })();
 </script>
