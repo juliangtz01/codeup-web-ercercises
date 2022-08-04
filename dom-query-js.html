@@ -32,30 +32,61 @@
         var mainHeader = document.getElementById('main-header');
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-        mainHeader.innerHTML = "JavaScript is Cool"
+        var mainHeaderBtn = document.createElement("button");
+        mainHeaderBtn.innerHTML = "Change the Main Header";
+        mainHeaderBtn.onclick = function()
+        {
+            mainHeader.innerHTML = "Javascript is cool";
+        };
+        document.body.appendChild(mainHeaderBtn);
         // TODO: Uncomment the next line and get the sub header element by id
         var subHeader = document.getElementById('sub-header');
 
         // TODO: Set the text color of subHeader to blue
-        subHeader.style.color = '#0000FF';
+        var subHeaderBtn = document.createElement("button");
+        subHeaderBtn.innerHTML = "Change The Sub Header Color";
+        subHeaderBtn.onclick = function()
+        {
+            subHeader.style.color = '#0000FF';
+        };
+        document.body.appendChild(subHeaderBtn);
         // TODO: Uncomment the next line and get all list items
         var listItems = document.getElementsByTagName('li');
 
         // TODO: Set text color on every other list item to grey
-        for(var x = 0; x < listItems.length; x++)
+        var listItemsBtn = document.createElement("button");
+        listItemsBtn.innerHTML = "Change Every Other Item's Color";
+        listItemsBtn.onclick = function()
         {
-            if(x % 2 !== 0)
+            for(var x = 0; x < listItems.length; x++)
             {
-                listItems[x].style.color = '#808080';
+                if(x % 2 !== 0)
+                {
+                    listItems[x].style.color = '#808080';
+                }
             }
-        }
+        };
+        document.body.appendChild(listItemsBtn);
+
         // TODO: Set text color of li with dbid = 1 to blue
-        listItems[0].style.color = '#0000FF';
+        var listItemBtn2 = document.createElement("button");
+        listItemBtn2.innerHTML = "Change Item 1 to Blue";
+        istItemBtn2.onclick = function ()
+        {
+            listItems[0].style.color = '#0000FF';
+        };
+        document.body.appendChild(listItemBtn2);
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         var subParagraphs = document.getElementsByClassName('sub-paragraph');
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-        subParagraphs[0].innerHTML = "Mission Accomplished";
+        var changeParagraph = document.createElement("button");
+        changeParagraph.innerHTML = "Change the Paragraph";
+        changeParagraph.onclick = function()
+        {
+            subParagraphs[0].innerHTML = "Mission Accomplished";
+        };
+        document.body.appendChild(changeParagraph);
     })();
 </script>
 </body>
