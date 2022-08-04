@@ -33,7 +33,7 @@
     person.sayHello = function ()
     {
         return "Hello from " + person.firstName + " " + person.lastName;
-    };
+    }
 
     console.log(person.sayHello());
 
@@ -65,7 +65,7 @@
         `the total amount paid for the purchase was $${total.toFixed(2)}`:
         `${item.name} spent $${Number(item.amount).toFixed(2)} and did not get a discount`);
         console.log("\b")
-    });
+    })
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -121,7 +121,7 @@
         //let bookNum = 0;
         console.log(`Book # ${index + 1}\n`+
         `Title: ${item.title}\nAuthor: ${item.author.firstName} ${item.author.lastName}`);
-    });
+    })
 
     /**
      * Bonus:
@@ -137,9 +137,7 @@
 
      function createBook(title, firstName, lastName)
      {
-        var bookInfo = [{theTitle: title, theFirstName: firstName, theLastName: lastName}];
-
-        return bookInfo;
+         return [{theTitle: title, theFirstName: firstName, theLastName: lastName}];
      }
 
      function showBookInfo(info)
