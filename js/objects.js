@@ -120,7 +120,8 @@
     books.forEach((item,index) =>{
         //let bookNum = 0;
         console.log(`Book # ${index + 1}\n`+
-        `Title: ${item.title}\nAuthor: ${item.author.firstName} ${item.author.lastName}`);
+        `Title: ${item.title}\nAuthor: ${item.author.firstName} ${item.author.lastName}\n`+
+        `---`);
     })
 
     /**
