@@ -18,7 +18,7 @@
             // Otherwise, output the complete value
             if(doRounding)
             {
-                console.log("Area of a circle with radius: " + this.radius + ", is: " + circle.getArea().toFixed(0));
+                console.log("Area of a circle with radius: " + this.radius + ", is: " + Math.ceil(circle.getArea()));
             }
             else
                 console.log("Area of a circle with radius: " + this.radius + ", is: " + circle.getArea());
