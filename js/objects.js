@@ -145,7 +145,7 @@
      {
          info.forEach((item, index) =>{
                  console.log(`Book # ${index + 1}\n`+
-                     `Title: ${item.theTitle}\nAuthor: ${item.theFirstName} ${item.theLastName}`);
+                     `Title: ${item.theTitle}\nAuthor: ${item.theFirstName} ${item.theLastName}\n---`);
          });
      }
 
