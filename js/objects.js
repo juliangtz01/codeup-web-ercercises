@@ -32,7 +32,7 @@
 
     person.sayHello = function ()
     {
-        return "Hello from " + person.firstName + " " + person.lastName;
+        return `Hello from ${person.firstName} ${person.lastName}!`
     }
 
     console.log(person.sayHello());
