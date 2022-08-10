@@ -21,7 +21,7 @@ function isFive(input)
     return input == 5;
 }
 
-function isEven()
+function isEven(input)
 {
-
+    return parseInt(input) % 2 === 0;
 }
