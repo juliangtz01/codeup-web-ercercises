@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register With  Us</title>
+</head>
+<body>
+    <h1>Thank you for shopping with us!</h1>
+    <hr>
+    <br>
+    <form method="POST" action="https://request-inspector.glitch.me/">
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" placeholder="yourEmail@gmail.com">
+        <p></p>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password">
+        <p></p>
+        <label for="bio">Bio Info:</label>
+        <textarea id="bio" name="bio" placeholder="Enter your info here"></textarea>
+        <p></p>
+        <hr>
+        <fieldset>
+            <legend>How did you hear about us?</legend>
+            <label for="billboard">Billborad</label>
+            <input type="radio" id="billboard" name="about-us" value="billboard">
+            <label for="raido-advertising">Radio Advertisement</label>
+            <input type="radio" id="raido-advertising" name="about-us" value="radio-advertising">
+            <label for="other">Other</label>
+            <input type="radio" id="other" name="about-us" value="other">
+        </fieldset>
+
+        <p></p>
+
+        <label for="website">What website are you using?</label>
+        <select id="website" name="website">
+            <option value="google">Google</option>
+            <option value="yahoo">Yahoo</option>
+            <option value="aol">AOL</option>
+        </select>
+
+        <p></p>
+
+        <button type="submit">Submit</button>
+
+    </form>
+</body>
+</html>
