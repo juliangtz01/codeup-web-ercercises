@@ -1,3 +1,60 @@
 #fancy-header {
     color: purple;
+    text-align: center;
+}
+
+h1,h2,h3 {
+    text-decoration: underline;
+}
+
+body {
+    background-color: slategray;
+    background-image: url("../img/lightning.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: ghostwhite;
+    /*font-family: 'Vollkorn', serif;*/
+    font-family: "American Typewriter";
+}
+
+#latin li {
+    list-style-type: upper-latin;
+}
+
+#square li {
+    list-style-type: square;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: solid;
+    font-family: Times;
+}
+
+.cost {
+    text-align: center;
+}
+
+/* unvisited link (:link) */
+a:link {
+    color: slateblue;
+}
+
+/* visited link (:visited) */
+a:visited {
+    color: ghostwhite;
+}
+
+/* mouse hover over link (:hover) */
+a:hover {
+    color:blue;
+}
+
+/* active/selected link (:active) */
+a:active {
+    color:green;
 }
