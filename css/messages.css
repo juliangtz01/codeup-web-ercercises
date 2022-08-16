@@ -1,3 +1,12 @@
+:root {
+    --text-info: lightblue;
+    --text-success: lightgreen;
+    --text-warning: lightyellow;
+    --text-error: lightpink;
+
+}
+
+
 body, html {
     height: 100%;
     width: 100%;
@@ -6,26 +15,34 @@ body, html {
     font-family: Arial, Ubuntu, sans-serif;
 }
 
+.message {
+    border-radius: 5px;
+}
+
 .message-info {
-    background-color: lightblue;
+    /*background-color: lightblue;*/
+    background-color: var(--text-info);
     padding: 1%;
     margin: .5em 0;
 }
 
 .message-success {
-    background-color: lightgreen;
+    /*background-color: lightgreen;*/
+    background-color: var(--text-success);
     padding: 1%;
     margin: .5em 0;
 }
 
 .message-warning {
-    background-color: yellow;
+    /*background-color: yellow;*/
+    background-color: var(--text-warning);
     padding: 1%;
     margin: .5em 0;
 }
 
 .message-error {
-    background-color: lightpink;
+    /*background-color: lightpink;*/
+    background-color: var(--text-error);
     padding: 1%;
     margin: .5em 0;
 }
