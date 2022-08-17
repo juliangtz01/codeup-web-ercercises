@@ -127,6 +127,7 @@ a {
 
 .profile-items {
     list-style: none;
+    padding: 0;
 }
 
 .profile-entry {
