@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+    color: white;
+    /*background-color: gray;*/
+    /*background: gray;*/
+}
+body {
+    margin: 0;
+}
+nav {
+    /*background: #333333;*/
+    display: flex;
+    justify-content: space-between;
+    background-color: gray;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+nav a {
+    text-decoration: none;
+    color: white;
+    font-family: Verdana;
+    display: inline-block;
+    padding: 1em;
+}
+nav a:hover {
+    background: darkkhaki;
+}
+
+.info {
+    display: flex;
+}
+
+.about {
+    display: flex;
+}
+
+.search {
+    height: 30px;
+    width: 30px;
+    color: black;
+}
+
+.shopping {
+    height: 35px;
+    width: 35px;
+}
+
+.profile {
+    height: 50px;
+    width: 50px;
+}
+
+
