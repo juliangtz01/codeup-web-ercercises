@@ -1,0 +1,37 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.jumbotron {
+    background-image: url("../img/pizza.png");
+    height: 346px;
+    background-size: cover;
+}
+
+.pizza-world {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 150px;
+}
+
+.card-size-crust {
+    background-color: blue;
+    color: white;
+}
+
+.card-header {
+    color: black;
+}
+
+#next-step {
+    background-color: lightgrey;
+    display: flex;
+
+}
+
+.next_step {
+    background-color: blue;
+    color: white;
+}
