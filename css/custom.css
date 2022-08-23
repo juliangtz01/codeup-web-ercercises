@@ -35,3 +35,28 @@
     background-color: blue;
     color: white;
 }
+
+#previous_next {
+    background-color: lightgrey;
+    display: flex;
+}
+
+.previous {
+    background-color: blue;
+    color: white;
+}
+
+.next {
+    background-color: blue;
+    color: white;
+}
+
+#checkout {
+    background-color: lightgrey;
+    display: flex;
+}
+
+.checkout {
+    background-color: blue;
+    color: white;
+}
