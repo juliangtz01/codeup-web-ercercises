@@ -1,10 +1,28 @@
+.name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.job-title  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+job-description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 hr {
     color: darkgreen;
     padding: 2px;
 }
 
-.row h2 {
-    color: blue;
+.col h2 {
+    color: royalblue;
 }
 
 .digital-media {
@@ -22,21 +40,4 @@ hr {
         justify-content: space-evenly;
     }
 
-    .name {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .job-title  {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    job-description {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
 }
