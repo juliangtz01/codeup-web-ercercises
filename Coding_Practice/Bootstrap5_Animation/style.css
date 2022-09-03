@@ -42,3 +42,9 @@ section {
     /* z-index of -1 will bring the text to the front of the picture */
     z-index: -1;
 }
+
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
