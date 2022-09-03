@@ -6,7 +6,7 @@ body {
 }
 
 h1,h2,h3,h4,h5,h6 {
-    font-weight: 900;
+    font-weight: 900 !important;
 }
 
 a {
@@ -55,9 +55,20 @@ section {
 
 .btn {
     padding: 14px 22px;
+    transition: all 0.4s ease;
 }
 
 .btn-main {
     background: linear-gradient(to left, #00e0fe, #1107fe);
+    /*making the button look more like an oval shape than and box shape*/
+    border-radius: 100px;
+    border: none;
+    font-weight: 600;
+    color: #fff;
+}
 
+.btn:hover {
+    color: #fff;
+    /*this will make the button move up a little give it an affect look*/
+    transform: translateY(-4px);
 }
