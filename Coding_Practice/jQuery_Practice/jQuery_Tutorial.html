@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>JQuery Tutorial</title>
+</head>
+<body>
+	<div id="about" style="height: 150px; width: 300px; background-color: lightgreen; text-align: center; padding: 10px;"></div>
+
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+	<script>
+		$(document).ready(function(){
+            $('#about').click(function(){
+                $(this).html('you clicked me!');
+			});
+            $('#about').hover(function (){
+               $(this).css('background-color', 'lightblue');
+			});
+		});
+	</script>
+</body>
+</html>
