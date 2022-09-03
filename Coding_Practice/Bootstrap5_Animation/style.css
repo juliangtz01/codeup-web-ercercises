@@ -74,5 +74,16 @@ section {
 }
 
 .section-intro {
+    margin-bottom: 40px;
+}
 
+.section-intro .divider {
+    height: 4px;
+    width: 70px;
+    background: linear-gradient(to left, #00e0fe, #1107fe);
+    margin: 16px auto;
+}
+
+img {
+    width: 100%;
 }
