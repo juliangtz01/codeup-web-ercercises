@@ -16,6 +16,8 @@
 
 	<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 
+	<input type="text" class="power" value="">
+
 	<script>
 		$(document).ready(function(){
             $('#about').click(function(){
@@ -36,6 +38,9 @@
             $('#toggle').click(function(){
                 $('#about').toggle();
             });
+            $('.power').keyup(function(){
+               $('#about').html($(this).val());
+			});
 
 		});
 	</script>
