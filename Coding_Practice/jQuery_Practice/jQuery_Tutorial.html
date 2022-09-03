@@ -27,6 +27,16 @@
             $('#about').mouseleave(function(){
                $(this).css('background-color', 'lightgreen');
 			});
+            $('#show').click(function(){
+               $('#about').show();
+			});
+            $('#hide').click(function(){
+                $('#about').hide();
+            });
+            $('#toggle').click(function(){
+                $('#about').toggle();
+            });
+
 		});
 	</script>
 </body>
