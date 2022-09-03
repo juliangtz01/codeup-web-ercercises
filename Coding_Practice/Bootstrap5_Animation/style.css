@@ -30,6 +30,8 @@ section {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+     /*this will give affect to the first picture*/
+    background-attachment: fixed;
 }
 
 .overlay {
@@ -47,4 +49,15 @@ section {
     min-height: 100vh;
     display: flex;
     justify-content: center;
+    align-items: center;
+
+}
+
+.btn {
+    padding: 14px 22px;
+}
+
+.btn-main {
+    background: linear-gradient(to left, #00e0fe, #1107fe);
+
 }
