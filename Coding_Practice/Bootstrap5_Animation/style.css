@@ -72,3 +72,7 @@ section {
     /*this will make the button move up a little give it an affect look*/
     transform: translateY(-4px);
 }
+
+.section-intro {
+
+}
