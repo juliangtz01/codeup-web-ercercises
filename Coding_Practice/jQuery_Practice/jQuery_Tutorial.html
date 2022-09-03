@@ -21,7 +21,14 @@
 	<script>
 		$(document).ready(function(){
             $('#about').click(function(){
-                $(this).html('you clicked me!');
+                if($(this).html() === 'you clicked me!')
+                {
+                    $(this).html('clicked me again!');
+				}
+                else
+                {
+                    $(this).html('you clicked me!');
+				}
 			});
             $('#about').hover(function (){
                $(this).css('background-color', 'lightblue');
