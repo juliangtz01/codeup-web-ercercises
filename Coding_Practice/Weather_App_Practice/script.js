@@ -10,3 +10,18 @@ const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 
 
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct',
                 'Nov', 'Dec'];
+
+setInterval(() => {
+    const time = new Date();
+    const month = time.getMonth();
+    const date = time.getDate();
+    const day = time.getDay();
+    const hour = time.getHours();
+    const hoursIn12HrFormat = hour >= 13 ? hour % 12: hour;
+    const minutes = time.getMinutes();
+    const ampm = hour > 12 ? 'PM' : 'AM';
+
+    timeE1.innerHTML = hoursIn12HrFormat + ':' + minutes + ' ' + `<span id="am-pm">${ampm}</span>`
+
+    dateE1.innerHTML = days[day] + ', ' + date + ' ' + minutes + ' ' + `<span id="am-pam">${ampm}</span>`
+},1000);
