@@ -63,10 +63,12 @@
 // Add jQuery code that will change the background color of an h1 element when clicked.
 $('h1').click(function() {
     $(this).css('background-color', 'blue');
-})
+});
 
 // Make all paragraphs have a font size of 18px when they are double clicked.
-
+$('p').dblclick(function(){
+    $(this).css('font-size', '18px');
+});
 
 // Set all li text color to red when the mouse is hovering; reset to black when it is not.
 
