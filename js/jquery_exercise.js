@@ -31,7 +31,7 @@
 //----CLASS SELECTOR EXERCISE-----
 
 //3. Using jQuery, create a border around all elements with the class codeup that is 1 pixel wide and red.
-$('.codeup').css('border', '1px solid red');
+// $('.codeup').css('border', '1px solid red');
 
 //4. Remove the class from one of the elements.
 // Refresh and test that the border has been removed.
@@ -42,7 +42,17 @@ $('.codeup').css('border', '1px solid red');
 
 //The id element with the name codeup does not get a red border
 
-// $('li').css('background-color', 'yellow').css('display', 'inline');
+
+//----Element SELECTOR EXERCISE-----
+
+//2. Using jQuery, set the font-size of all li elements to 20px.
+$('li').css('font-size', '20px');
+
+//3. Craft selectors that highlight all the h1, p, and li elements.
+$('h1, p, li').css('background-color', 'yellow');
+
+//Create a jQuery statement to alert the contents of your h1 element(s)
+alert($('h1').text());
 
 
 
