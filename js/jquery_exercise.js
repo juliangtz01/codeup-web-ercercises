@@ -4,30 +4,43 @@
 //     alert( 'The DOM has finished loading!' );
 // });
 
-
 // $('*').css('border', '1px solid #F00');
 
 //create a variable and assign jQuery code to hold the innerHTML of element 'p'
-var x = ($('p').text());
+// var x = ($('p').text());
 
 //create an alert and pass the (typeof x) to display the result
 // alert(typeof x);
 
+//----ID SELECTOR EXERCISE-----
+
 //3. Use jQuery to select an element by the id.
 // Alert the contents of the element.
 //create an alert and pass x to display the result
-alert(x);
+// alert(x);
 
 //4. Update the jQuery code to select and alert a different id.
-x = $('#id-two').text();
-alert(x);
+// x = $('#id-two').text();
+// alert(x);
 
 //5. Use the same id on 2 elements. How does this change the jQuery selection?
-x = $('#id-one').text();
-alert(x);
+// x = $('#id-one').text();
+// alert(x);
 //even if there are two id's with the same name, only one will display on alert
 
+//----CLASS SELECTOR EXERCISE-----
 
+//3. Using jQuery, create a border around all elements with the class codeup that is 1 pixel wide and red.
+$('.codeup').css('border', '1px solid red');
+
+//4. Remove the class from one of the elements.
+// Refresh and test that the border has been removed.
+
+//The border was removed from the element without the class codeup
+
+//5. Give another element an id of codeup. Does this element get a border now?
+
+//The id element with the name codeup does not get a red border
 
 // $('li').css('background-color', 'yellow').css('display', 'inline');
 
