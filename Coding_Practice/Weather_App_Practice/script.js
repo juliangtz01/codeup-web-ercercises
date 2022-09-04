@@ -5,3 +5,5 @@ const timeZone = document.getElementById('time-zone');
 const countryE1 = document.getElementById('country');
 const weatherForecastE1 = document.getElementById('weather-forecast');
 const currentTempE1 = document.getElementById('current-temp');
+
+const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
