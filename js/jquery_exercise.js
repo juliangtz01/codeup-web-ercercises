@@ -1,5 +1,7 @@
 "use strict";
 
+//----SELECTORS EXERCISE SECTION------
+
 // window.onload = $(function() {
 //     alert( 'The DOM has finished loading!' );
 // });
@@ -46,14 +48,26 @@
 //----Element SELECTOR EXERCISE-----
 
 //2. Using jQuery, set the font-size of all li elements to 20px.
-$('li').css('font-size', '20px');
+// $('li').css('font-size', '20px');
 
 //3. Craft selectors that highlight all the h1, p, and li elements.
-$('h1, p, li').css('background-color', 'yellow');
+// $('h1, p, li').css('background-color', 'yellow');
 
 //Create a jQuery statement to alert the contents of your h1 element(s)
-alert($('h1').text());
+// alert($('h1').text());
+
+//----MOUSE EVENT EXERCISE SECTION------
+
+//Remove your custom jQuery code from previous exercises.
+
+// Add jQuery code that will change the background color of an h1 element when clicked.
+$('h1').click(function() {
+    $(this).css('background-color', 'blue');
+})
+
+// Make all paragraphs have a font size of 18px when they are double clicked.
 
 
+// Set all li text color to red when the mouse is hovering; reset to black when it is not.
 
 
