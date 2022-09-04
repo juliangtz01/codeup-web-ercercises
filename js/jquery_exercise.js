@@ -72,4 +72,16 @@ $('p').dblclick(function(){
 
 // Set all li text color to red when the mouse is hovering; reset to black when it is not.
 
+$('li').hover(
+    function()
+    {
+        $(this).css('background-color', 'red')
+    },
+    function()
+    {
+        $(this).css('background-color', 'white')
+    }
+);
+
+
 
