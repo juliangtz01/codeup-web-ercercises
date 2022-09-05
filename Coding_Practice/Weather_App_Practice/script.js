@@ -36,5 +36,16 @@ function getWeatherData()
         console.log(success);
 
         let {latitude, longitude} = success.coords;
+
+        //had to use a different API, because the one used on the youtube exercise is for a pid subscription. Some display items may or may show with the new API.
+        fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&exclude=hourly,minutely&appid=${API_KEY}`).then(res => res.json()).then(data => {
+            console.log(data);
+            showWeatherData(data);
+        })
     })
+}
+
+function showWeatherData(data)
+{
+
 }
