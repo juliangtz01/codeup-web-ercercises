@@ -11,6 +11,8 @@ const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct',
                 'Nov', 'Dec'];
 
+const API_KEY = '25f3f6e380d02ecb447f74d5ba536b0a';
+
 setInterval(() => {
     const time = new Date();
     const month = time.getMonth();
