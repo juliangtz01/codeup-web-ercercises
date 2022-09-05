@@ -25,3 +25,14 @@ setInterval(() => {
 
     dateE1.innerHTML = days[day] + ', ' + date + ' ' + minutes + ' ' + `<span id="am-pam">${ampm}</span>`
 },1000);
+
+getWeatherData();
+
+function getWeatherData()
+{
+    navigator.geolocation.getCurrentPosition((success) =>{
+        console.log(success);
+
+        let {latitude, longitude} = success.coords;
+    })
+}
