@@ -87,3 +87,18 @@ section {
 img {
     width: 100%;
 }
+
+.service .service-img .icon {
+    width: 90px;
+    height: 90px;
+    background: linear-gradient(to left, #00e0fe, #1107fe);
+    color: #fff;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service .service-img .icon i {
+    font-size: 36px;
+}
