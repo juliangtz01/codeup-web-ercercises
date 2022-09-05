@@ -38,7 +38,7 @@ function getWeatherData()
         let {latitude, longitude} = success.coords;
 
         //had to use a different API, because the one used on the youtube exercise is for a pid subscription. Some display items may or may show with the new API.
-        fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&exclude=hourly,minutely&appid=${API_KEY}`).then(res => res.json()).then(data => {
+        fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&exclude=hourly,minutely&units=metric&appid=${API_KEY}`).then(res => res.json()).then(data => {
             console.log(data);
             showWeatherData(data);
         })
@@ -47,5 +47,19 @@ function getWeatherData()
 
 function showWeatherData(data)
 {
+    let {accuracy, pressure, sunrise, sunset, wind_speed} = data.coords;
 
+    currentWeatherItemsE1.innerHTML =
+        `<div class="weather-item">
+\t\t\t\t\t\t<div>Humidity</div>
+\t\t\t\t\t\t<div>${accuracy}</div>
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class="weather-item">
+\t\t\t\t\t\t<div>Pressure</div>
+\t\t\t\t\t\t<div>${pressure}</div>
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class="weather-item">
+\t\t\t\t\t\t<div>Wind Speed</div>
+\t\t\t\t\t\t<div>${wind_speed}</div>
+\t\t\t\t\t</div>`
 }
