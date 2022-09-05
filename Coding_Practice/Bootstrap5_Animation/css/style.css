@@ -88,6 +88,10 @@ img {
     width: 100%;
 }
 
+.service .service-img {
+    position: relative;
+}
+
 .service .service-img .icon {
     width: 90px;
     height: 90px;
@@ -97,6 +101,10 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    bottom: -45px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .service .service-img .icon i {
