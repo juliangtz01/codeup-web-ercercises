@@ -7,3 +7,6 @@ let keys = {
     65: 'a',
     66: 'b'
 };
+
+//create an array variable to hold the correct Konami Code
+let konamiCode = ['up', 'up', 'down', 'down', 'left', 'right', 'left', 'right', 'b','a'];
