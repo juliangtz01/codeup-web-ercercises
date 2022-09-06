@@ -22,4 +22,10 @@ function checkCode(e)
 {
     //create an array variable to capture what the user keys
     let keyPressed = keys[e.keyCode];
+
+    //if the keyPressed is the same as the konamiCode then increment the keyCount variable
+    if(keyPressed === konamiCode[keyCount])
+    {
+        keyCount++;
+    }
 }
