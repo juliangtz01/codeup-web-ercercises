@@ -41,3 +41,9 @@ function checkCode(e)
         resetKeyState();
     }
 }
+
+//create a function that changes the html page when called
+function cheatCodeActivated()
+{
+    $('body').css('background', 'blue');
+}
