@@ -27,5 +27,17 @@ function checkCode(e)
     if(keyPressed === konamiCode[keyCount])
     {
         keyCount++;
+
+        //if keyCount matches the length of the konamiCode the user has entered the correct code
+        if(keyCount === konamiCode.length)
+        {
+            cheatCodeActivated();
+            resetKeyState();
+        }
+    }
+    //if the keyPressed does not match konamiCode, then call resetKeySate function
+    else
+    {
+        resetKeyState();
     }
 }
