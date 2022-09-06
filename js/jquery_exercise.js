@@ -32,7 +32,7 @@
 
 //----CLASS SELECTOR EXERCISE-----
 
-//3. Using jQuery, create a border around all elements with the class codeup that is 1 pixel wide and red.
+// 3. Using jQuery, create a border around all elements with the class codeup that is 1 pixel wide and red.
 // $('.codeup').css('border', '1px solid red');
 
 //4. Remove the class from one of the elements.
@@ -55,6 +55,15 @@
 
 //Create a jQuery statement to alert the contents of your h1 element(s)
 // alert($('h1').text());
+// $('h1').css('background-color', 'yellow');
+// $('p').css('background-color', 'yellow');
+// $('li').css('background-color', 'yellow');
+
+//----Element SELECTOR EXERCISE-----
+
+//1. Combine your selectors that highlight all the h1, p, and li elements.
+// $('h1, p, li').css('background-color', 'yellow');
+
 
 //----MOUSE EVENT EXERCISE SECTION------
 
