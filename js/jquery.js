@@ -47,3 +47,9 @@ function cheatCodeActivated()
 {
     $('body').css('background', 'blue');
 }
+
+//create a function that will reset the keyCount to 0 when called
+function resetKeyState()
+{
+    keyCount = 0;
+}
