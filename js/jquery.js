@@ -10,3 +10,6 @@ let keys = {
 
 //create an array variable to hold the correct Konami Code
 let konamiCode = ['up', 'up', 'down', 'down', 'left', 'right', 'left', 'right', 'b','a'];
+
+//add an event listener with jQuery to log the keys being pressed with the checkCode function
+$(document).keydown(checkCode);
