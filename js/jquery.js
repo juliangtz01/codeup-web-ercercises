@@ -16,3 +16,10 @@ $(document).keydown(checkCode);
 
 //create a variable to hold the count of the keys's pressed
 let keyCount = 0;
+
+//create a function to check the code matches the konamiCode
+function checkCode(e)
+{
+    //create an array variable to capture what the user keys
+    let keyPressed = keys[e.keyCode];
+}
