@@ -13,3 +13,6 @@ let konamiCode = ['up', 'up', 'down', 'down', 'left', 'right', 'left', 'right', 
 
 //add an event listener with jQuery to log the keys being pressed with the checkCode function
 $(document).keydown(checkCode);
+
+//create a variable to hold the count of the keys's pressed
+let keyCount = 0;
