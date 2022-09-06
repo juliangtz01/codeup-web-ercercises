@@ -1,0 +1,13 @@
+.jumbotron {
+    background-color: lightgray;
+}
+
+#panel1, #panel2, #panel3, #panel4 {
+    border: solid blue;
+}
+
+.panel-heading {
+    background-color: cornflowerblue;
+    color: white;
+}
+
