@@ -45,14 +45,22 @@ function checkCode(e)
 //create a function that changes the html page when called
 function cheatCodeActivated()
 {
-    $('img').css({
+    $('#contra').css({
+        'background-image': 'url(img/contra.png)',
         'background-repeat': 'no-repeat',
+        'font-size': '100px',
         'height': '200px',
         'max-width': 'auto',
         'object-fit': 'fill'
-    });
-}
+    })
 
+    $('h1').css({'text-align': 'center'});
+
+    $('p').css({
+        'text-align': 'center',
+        'font-size' : '40px'
+    }).html('You have activated the Konami Code, your player has 30 lives!!!');
+}
 //create a function that will reset the keyCount to 0 when called
 function resetKeyState()
 {
