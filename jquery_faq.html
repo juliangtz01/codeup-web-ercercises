@@ -10,18 +10,19 @@
 	<title>jQuery FAQ</title>
 
 	<style>
-		body {
-			background: rgb(143,188,143);
-		}
+        body {
+            /*background: rgb(143,188,143);*/
+        }
 
-		.info-class {
-			margin: auto;
-			width: 60%;
-		}
+        .info-class {
+            margin: auto;
+            width: 60%;
+        }
 
-		.dl-info {
-			background: rgb(175,238,238);
-		}
+        .dl-info {
+            background: rgb(175, 238, 238);
+        }
+
         .invisible {
             visibility: hidden;
         }
@@ -29,71 +30,127 @@
 </head>
 <body>
 	<div container>
-		<header class="pt-4 pb-4 text-center">
-			<h1>10 FAQ ABOUT NATIONAL PARKS</h1>
-		</header>
-		<div class="info-class">
-			<dl class="dl-info px-5 py-5">
-				<dt>1. What are three of the 10 highest waterfalls in the world are located in Yosemite National Park in California?</dt>
-				<dd>Sentinel Fall, Ribbon Fall, and Bridalveil Fall.</dd>
-				<p></p>
-				<dt>2. One of the hottest temperature on earth was recorded in 1913 in Death Valley National Park, registering at?</dt>
-				<dd>134 degrees.</dd>
-				<p></p>
-				<dt>3. Wrangell-St. Elias National Park, Alaska, is the largest national park, covering how many square mile?</dt>
-				<dd> 13,000 square miles or 13.2 million acres.</dd>
-				<p></p>
-				<dt>4. What is Arches National Park famous for?</dt>
-				<dd>Arches National Park is famous for having the largest concentration of stone arches in the world.</dd>
-				<p></p>
-				<dt>5. Which Fall in Yosemite is nine times taller than Niagara Falls?</dt>
-				<dd>Ribbon Falls.</dd>
-				<p></p>
-				<dt>6. What is Dry Tortugas National Park in Florida known for?</dt>
-				<dd>Dry Tortugas National Park in Florida is known for its world-renowned concentration of turtles.</dd>
-				<p></p>
-				<dt>7. Mount McKinley in the Alaska Range of Denali National Park is the highest point in the national parks at?</dt>
-				<dd>20,302 feet.</dd>
-				<p></p>
-				<dt>8. Mesa Verde National Park was the first national park to be recognized for "works of man," and
-					acknowledgement of the incredible cliff dwellings left behind by?</dt>
-				<dd>the Pueblo Indians.</dd>
-				<p></p>
-				<dt>9. Carter Lake National Park in Oregon is the deepest lake in the U.S. by how many feet deep?</dt>
-				<dd>At 1,932 feet deep.</dd>
-				<p></p>
-				<dt>10. National Park in Arizona, is known as one of the Seven Natural
-					Wonders of the World?</dt>
-				<dd>The Grand Canyon, in the Grand Canyon National Park in Arizona.</dd>
-				<p></p>
-			</dl>
-		</div>
-		<div class="text-center pt-4 pb-4">
-			<button type="button">Display/Hide National Park Info</button>
-		</div>
+<!--			<header class="pt-4 pb-4 text-center">-->
+<!--				<h1>10 FAQ ABOUT NATIONAL PARKS</h1>-->
+<!--			</header>-->
+<!--			<div class="info-class">-->
+<!--				<dl class="dl-info px-5 py-5">-->
+<!--					<dt>1. What are three of the 10 highest waterfalls in the world are located in Yosemite National Park in California?</dt>-->
+<!--					<dd>Sentinel Fall, Ribbon Fall, and Bridalveil Fall.</dd>-->
+<!--					<p></p>-->
+<!--					<dt>2. One of the hottest temperature on earth was recorded in 1913 in Death Valley National Park, registering at?</dt>-->
+<!--					<dd>134 degrees.</dd>-->
+<!--					<p></p>-->
+<!--					<dt>3. Wrangell-St. Elias National Park, Alaska, is the largest national park, covering how many square mile?</dt>-->
+<!--					<dd> 13,000 square miles or 13.2 million acres.</dd>-->
+<!--					<p></p>-->
+<!--					<dt>4. What is Arches National Park famous for?</dt>-->
+<!--					<dd>Arches National Park is famous for having the largest concentration of stone arches in the world.</dd>-->
+<!--					<p></p>-->
+<!--					<dt>5. Which Fall in Yosemite is nine times taller than Niagara Falls?</dt>-->
+<!--					<dd>Ribbon Falls.</dd>-->
+<!--					<p></p>-->
+<!--					<dt>6. What is Dry Tortugas National Park in Florida known for?</dt>-->
+<!--					<dd>Dry Tortugas National Park in Florida is known for its world-renowned concentration of turtles.</dd>-->
+<!--					<p></p>-->
+<!--					<dt>7. Mount McKinley in the Alaska Range of Denali National Park is the highest point in the national parks at?</dt>-->
+<!--					<dd>20,302 feet.</dd>-->
+<!--					<p></p>-->
+<!--					<dt>8. Mesa Verde National Park was the first national park to be recognized for "works of man," and-->
+<!--						acknowledgement of the incredible cliff dwellings left behind by?</dt>-->
+<!--					<dd>the Pueblo Indians.</dd>-->
+<!--					<p></p>-->
+<!--					<dt>9. Carter Lake National Park in Oregon is the deepest lake in the U.S. by how many feet deep?</dt>-->
+<!--					<dd>At 1,932 feet deep.</dd>-->
+<!--					<p></p>-->
+<!--					<dt>10. National Park in Arizona, is known as one of the Seven Natural-->
+<!--						Wonders of the World?</dt>-->
+<!--					<dd>The Grand Canyon, in the Grand Canyon National Park in Arizona.</dd>-->
+<!--					<p></p>-->
+<!--				</dl>-->
+<!--			</div>-->
+<!--			<div class="text-center pt-4 pb-4">-->
+<!--				<button type="button">Display/Hide National Park Info</button>-->
+<!--			</div>-->
+
+<!--		----------------Exercises-------------------------- -->
+<!--		1. Open the file named jquery_faq.html for editing. Commit all changes to GitHub.-->
+
+<!--		2. Under the FAQ, add 3 unordered lists like above. Each list should contain a national park name in an h3 element, and a ul of 4 facts about the park.-->
+
+<!--		3. Create a button that, when clicked, makes the last li in each ul have a yellow background.-->
+
+<!--		4. When any h3 is clicked, the lis underneath it should be bolded. Use font-weight: bold to achieve this.-->
+
+<!--		5. When any list item is clicked, first li of the parent ul should have a font color of blue.-->
+
+<!--		-------------------------Bonus-------------------------- -->
+<!--		Create 3 divs that each look like a picture frame. Each one should have a unique background image and a button underneath that swaps the image from the frame. Use the traversing functions of jQuery to accomplish this.-->
+
+<!--		The rules are the following:-->
+
+<!--		* The left frame swaps to the right and takes the image from the frame in the center.-->
+<!--		* The center frame swaps randomly to either the left or right.-->
+<!--		* The right frame swaps to the left and takes the image from the frame in the center.-->
+
+
+
+		<section>
+			<h3>Denali National Park</h3>
+			<ul>
+				<li>DNP is home to the highest peak in North America, Denali. Called "The High One" in language of the
+					Athabascan tribe, this towering peak stands at 20,320 feet above sea level.
+				</li>
+				<li>The year of 1910 marked the first time that anyone had successfully summited Denali. It was a group of
+					local residents who celebrated with hot chocolate and donuts.
+				</li>
+				<li>Sable Pass inside DNP is known to be the best area to spot massive grizzly bears.</li>
+				<li>There are 169 different bird species, 39 mammal species, 14 fish species, and one species of amphibian
+					known in Denali, whilst the park is also home to 1,500 species of vascular plants, lichens and mosses.
+				</li>
+			</ul>
+			<h3>Yellowstone National Park</h3>
+			<ul>
+				<li>World's First National Park.</li>
+				<li>A designated World Heritage Site and designated Biosphere Reserve.</li>
+				<li>3,472 square miles or 8,987 square km.</li>
+				<li>96 % in Wyoming an 3 % in Montana.</li>
+			</ul>
+			<h3>Yosemite National Park</h3>
+			<ul>
+				<li>El Capitan is the largest granite monolith in the world. It rises more than 3,000 feet above the valley
+					floor and is a favorite for experienced rock climbers.
+				</li>
+				<li>Yosemite Falls: This is the tallest waterfall in North America. Snow runoff cascades down the 2,425 foot
+					drop, with peak flow in May. In winter, an ice cone is often visible at the top of the falls.
+				</li>
+				<li>Giant Sequoias and Mariposa Grove: Mariposa Grove contains about 500 mature giant sequoias.</li>
+				<li>There are 840 miles of trails to hike in Yosemite National Park</li>
+			</ul>
+			<button id="highlight-btn">Highlight</button>
+		</section>
 	</div>
 
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+			integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+			crossorigin="anonymous"></script>
 
-<script src="https://code.jquery.com/jquery-2.2.4.min.js"
-		integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-		crossorigin="anonymous"></script>
+	<script>
+        $('button').click(function () {
+            $('dd').toggleClass('invisible');
+        });
 
-<script>
-    $('button').click(function(){
-        $('dd').toggleClass('invisible');
-    });
-
-	$('dt').click(function(){
-        $(this).css({
-			'background' : 'yellow'
-		}).dblclick(function(){
+        $('dt').click(function () {
             $(this).css({
-                'background' : 'none'
-			});
-		});
-	});
-</script>
+                'background': 'yellow'
+            }).dblclick(function () {
+                $(this).css({
+                    'background': 'none'
+                });
+            });
+        });
+	</script>
 </body>
 </html>
