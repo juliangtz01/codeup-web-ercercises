@@ -45,7 +45,12 @@ function checkCode(e)
 //create a function that changes the html page when called
 function cheatCodeActivated()
 {
-    $('body').css('background', 'blue');
+    $('img').css({
+        'background-repeat': 'no-repeat',
+        'height': '200px',
+        'max-width': 'auto',
+        'object-fit': 'fill'
+    });
 }
 
 //create a function that will reset the keyCount to 0 when called
