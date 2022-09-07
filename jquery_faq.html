@@ -153,6 +153,7 @@
             });
         });
 
+        // 3. Create a button that, when clicked, makes the last li in each ul have a yellow background.-->
         $('#highlight-btn').click(function(){
 
             $('ul').each(function(index, item){
@@ -168,11 +169,18 @@
                 {
                     $(this).children().last().css('background', 'yellow')
                 }
-            })
-		})
+            });
+		});
 
+        // 4. When any h3 is clicked, the lis underneath it should be bolded. Use font-weight: bold to achieve this.-->
+        $('h3').click(function(){
+            $(this).next().css('font-weight', 'bold');
+		});
 
-
+        // 5. When any list item is clicked, first li of the parent ul should have a font color of blue.-->
+		$('ul').click(function(){
+            $(this).children().first().css('color', 'blue');
+		});
 
 	</script>
 </body>
