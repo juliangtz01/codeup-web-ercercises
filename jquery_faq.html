@@ -10,6 +10,18 @@
 	<title>jQuery FAQ</title>
 
 	<style>
+		body {
+			background: rgb(143,188,143);
+		}
+
+		.info-class {
+			margin: auto;
+			width: 60%;
+		}
+
+		.dl-info {
+			background: rgb(175,238,238);
+		}
         .invisible {
             visibility: hidden;
         }
@@ -17,11 +29,11 @@
 </head>
 <body>
 	<div container>
-		<heading>
+		<header class="pt-4 pb-4 text-center">
 			<h1>10 FAQ ABOUT NATIONAL PARKS</h1>
-		</heading>
-		<div>
-			<dl>
+		</header>
+		<div class="info-class">
+			<dl class="dl-info px-5 py-5">
 				<dt>1. Yosemite National Park</dt>
 				<dd>Three of the 10 highest waterfalls in the world are located in Yosemite National Park in California.
 				</dd>
@@ -68,7 +80,7 @@
 				<p></p>
 			</dl>
 		</div>
-		<div>
+		<div class="text-center pt-4 pb-4">
 			<button>Display/Hide National Park Info</button>
 		</div>
 	</div>
