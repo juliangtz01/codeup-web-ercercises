@@ -104,7 +104,8 @@
 				<li>The year of 1910 marked the first time that anyone had successfully summited Denali. It was a group of
 					local residents who celebrated with hot chocolate and donuts.
 				</li>
-				<li>Sable Pass inside DNP is known to be the best area to spot massive grizzly bears.</li>
+				<li>Sable Pass inside DNP is known to be the best area to spot massive grizzly bears.
+				</li>
 				<li>There are 169 different bird species, 39 mammal species, 14 fish species, and one species of amphibian
 					known in Denali, whilst the park is also home to 1,500 species of vascular plants, lichens and mosses.
 				</li>
@@ -151,6 +152,28 @@
                 });
             });
         });
+
+        $('#highlight-btn').click(function(){
+
+            $('ul').each(function(index, item){
+                if(index === 0)
+                {
+                    $(this).children().last().css('background', 'yellow')
+                }
+                if(index === 1)
+                {
+                    $(this).children().last().css('background', 'yellow')
+                }
+                if(index === 2)
+                {
+                    $(this).children().last().css('background', 'yellow')
+                }
+            })
+		})
+
+
+
+
 	</script>
 </body>
 </html>
