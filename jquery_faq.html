@@ -5,61 +5,95 @@
 	<meta name="viewport"
 		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<title>jQuery FAQ</title>
 
 	<style>
-		.invisible {
-			visibility: hidden;
-		}
+        .invisible {
+            visibility: hidden;
+        }
 	</style>
 </head>
 <body>
-	<heading>
-		<h1>10 FAQ ABOUT NATIONAL PARKS</h1>
-	</heading>
-	<div>
-		<dl>
-			<dt>1. Yosemite National Park</dt>
-			<dd>Three of the 10 highest waterfalls in the world are located in Yosemite National Park in California.</dd>
-			<p></p>
-			<dt>2. Death Valley National Park</dt>
-			<dd>One of the hottest temperature on earth was recorded in 1913 in Death Valley National Park, registering 134 degrees.</dd>
-			<p></p>
-			<dt>3. Wrangell-St. Elias National Park</dt>
-			<dd>Wrangell-St. Elias National Park, Alaska, is the largest national park, covering 13,000 square miles or 13.2 million acres.</dd>
-			<p></p>
-			<dt>4. Arches National Park</dt>
-			<dd>Arches National Park is famous for having the largest concentration of stone arches in the world.</dd>
-			<p></p>
-			<dt>5. Utah's National Parks</dt>
-			<dd>Utah's five national parks are all within easy driving distance of each other, which means that you can cross off five national parks form your "bucket list" on just one trip.</dd>
-			<p></p>
-			<dt>6. Dry Tortugas National Park</dt>
-			<dd>Dry Tortugas National Park in Florida is known for its world-renowned concentration of turtles.</dd>
-			<p></p>
-			<dt>7. Rocky Mountain National Park</dt>
-			<dd>Trail Ridge Road in Rocky Mountain National Park, which connects Grand Lake and Estes Park, is the highest continuously paved road in the U.S., and it includes breathtaking views and vistas along its entire 48 miles.</dd>
-			<p></p>
-			<dt>8. Mesa Verde National Park</dt>
-			<dd>Mesa Verde National Park was the first national park to be recognized for "works of man," and acknowledgement of the incredible cliff dwellings left behind by the Pueblo Indians.</dd>
-			<p></p>
-			<dt>9. Carter Lake National Park</dt>
-			<dd>At 1,932 feet deep, Carter Lake National Park in Oregon is the deepest lake in the U.S.</dd>
-			<p></p>
-			<dt>10. Grand Canyon National Park</dt>
-			<dd>The Grand Canyon, in the Grand Canyon National Park in Arizona, is known as one of the Seven Natural Wonders of the World.</dd>
-			<p></p>
-		</dl>
+	<div container>
+		<heading>
+			<h1>10 FAQ ABOUT NATIONAL PARKS</h1>
+		</heading>
+		<div>
+			<dl>
+				<dt>1. Yosemite National Park</dt>
+				<dd>Three of the 10 highest waterfalls in the world are located in Yosemite National Park in California.
+				</dd>
+				<p></p>
+				<dt>2. Death Valley National Park</dt>
+				<dd>One of the hottest temperature on earth was recorded in 1913 in Death Valley National Park, registering
+					134 degrees.
+				</dd>
+				<p></p>
+				<dt>3. Wrangell-St. Elias National Park</dt>
+				<dd>Wrangell-St. Elias National Park, Alaska, is the largest national park, covering 13,000 square miles or
+					13.2 million acres.
+				</dd>
+				<p></p>
+				<dt>4. Arches National Park</dt>
+				<dd>Arches National Park is famous for having the largest concentration of stone arches in the world.</dd>
+				<p></p>
+				<dt>5. Utah's National Parks</dt>
+				<dd>Utah's five national parks are all within easy driving distance of each other, which means that you can
+					cross off five national parks form your "bucket list" on just one trip.
+				</dd>
+				<p></p>
+				<dt>6. Dry Tortugas National Park</dt>
+				<dd>Dry Tortugas National Park in Florida is known for its world-renowned concentration of turtles.</dd>
+				<p></p>
+				<dt>7. Rocky Mountain National Park</dt>
+				<dd>Trail Ridge Road in Rocky Mountain National Park, which connects Grand Lake and Estes Park, is the
+					highest continuously paved road in the U.S., and it includes breathtaking views and vistas along its
+					entire 48 miles.
+				</dd>
+				<p></p>
+				<dt>8. Mesa Verde National Park</dt>
+				<dd>Mesa Verde National Park was the first national park to be recognized for "works of man," and
+					acknowledgement of the incredible cliff dwellings left behind by the Pueblo Indians.
+				</dd>
+				<p></p>
+				<dt>9. Carter Lake National Park</dt>
+				<dd>At 1,932 feet deep, Carter Lake National Park in Oregon is the deepest lake in the U.S.</dd>
+				<p></p>
+				<dt>10. Grand Canyon National Park</dt>
+				<dd>The Grand Canyon, in the Grand Canyon National Park in Arizona, is known as one of the Seven Natural
+					Wonders of the World.
+				</dd>
+				<p></p>
+			</dl>
+		</div>
+		<div>
+			<button>Display/Hide National Park Info</button>
+		</div>
 	</div>
 
-	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-	<script>
-		// $('dd').click(function(){
-        //     $(this).toggleClass('invisible');
-		// })
-	</script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+		integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+
+<script>
+    $('button').click(function(){
+        $('dd').toggleClass('invisible');
+    });
+
+	$('dt').click(function(){
+        $(this).css({
+			'background' : 'yellow'
+		}).dblclick(function(){
+            $(this).css({
+                'background' : 'none'
+			});
+		});
+	});
+</script>
 </body>
 </html>
