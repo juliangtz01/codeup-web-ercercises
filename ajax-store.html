@@ -19,10 +19,11 @@
 	<tbody id="insertProducts"></tbody>
 </table>
 
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+		integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
 <script>
-    (function() {
+    (function () {
         "use strict";
         // TODO: Create an AJAX GET request for the file under data/inventory.json
 
@@ -30,6 +31,23 @@
         //       HINT: Your data should come back as a JSON object; use console.log() to inspect
         //             its contents and fields
         //       HINT: You will want to target #insertProducts for your new HTML elements
+
+        $.ajax('./data/inventory.json').done(function (data) {
+
+            $.each(data, function(index, value){
+
+                $('#insertProducts').append(
+                    "<tr>" +
+                    "<th>" + value.title + "</th>" +
+                    "<th>" + value.quantity + "</th>" +
+                    "<th>" + value.price + "</th>" +
+                    "<th>" + value.categories + "</th>" +
+                    "</tr>"
+                )
+            });
+
+        });
+
     })();
 </script>
 
