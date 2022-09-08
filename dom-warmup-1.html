@@ -39,7 +39,16 @@
 
 <script>
     // TODO: when a div inside `.grid` is clicked, the background color should change to orange (rgb(255, 165, 0)).
+
     // TODO (OPTIONAL BONUS): when an orange div is clicked, change it back to white
+
+    $('.grid>div').on('click', function(){
+        let currentColor = $(this).css('background-color');
+        if(currentColor === 'rgb(255, 165, 0)')
+            $(this).css('background', 'rgb(255, 255, 255)');
+        else
+			$(this).css('background', 'rgb(255, 165, 0)');
+    });
 
 </script>
 </body>
