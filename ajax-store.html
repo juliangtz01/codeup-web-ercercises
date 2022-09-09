@@ -86,87 +86,93 @@
         //       HINT: Your data should come back as a JSON object; use console.log() to inspect
         //             its contents and fields
         //       HINT: You will want to target #insertProducts for your new HTML elements
-        //
-        // $.ajax('./data/inventory.json').done(function (data) {
-        //
-        //     $.each(data, function (index, value) {
-        //
-        //         $('#insertProducts').append(
-        //             "<tr class=\"table-warning\">" +
-        //             "<td>" + value.title + "</td>" +
-        //             "<td>" + value.quantity + "</td>" +
-        //             "<td>" +"$ " + value.price + "</td>" +
-        //             "<td>" + value.categories + "</td>" +
-        //             "</tr>"
-        //         )
-        //     });
-        // });
 
-        //code the refresh-btn to display the tool inventory when clicked
-        $('#refresh-btn').on('click', function () {
-            $.get('./data/inventory.json').done(function (data) {
+        function createHTML(inventory) {
+            // loop through inventory and create an HTML string for each tool
+            let html = '';
+            for (let i = 0; i < inventory.length; i += 1) {
+                html += '<tr class="table-warning">\n' +
+                    '        <td>' + inventory[i].title + '</td>\n' +
+                    '        <td>' + inventory[i].quantity + '</td>\n' +
+                    '        <td>$ ' + inventory[i].price + '</td>\n' +
+                    '        <td>' + inventory[i].categories + '</td>\n' +
+                    '    </tr>'
+            }
+            return html;
+        }
 
-                // const sendJSON = JSON.stringify(data);
-                console.log(data);
-                //
-                // const receiveJSON = JSON.parse(sendJSON);
-                //
-                // console.log(receiveJSON[0].title);
-
-                // let count = 0;
-                //
-                // $('td').html('');
-
-                $("#insertProducts").empty();
-
-                $.each(data, function (index, element) {
-                    //     // console.log(element);
-                    //     // console.log($(index));
-					//
-
-                    //    "input-powered">powered</label>
-                    //
-                    //        "input-gas">gas</label>
-                    //
-                    //            "input-outdoor">outdoor</label>
-                    //            id="input-outdoor">
-                    let toolInfo = "";
-                    toolInfo += "<tr class=\"table-warning\">";
-                    toolInfo += "<td>" + element.title + "</td>";
-                    toolInfo += "<td>" + element.quantity + "</td>";
-                    toolInfo += "<td>" + "$ " + element.price + "</td>";
-                    toolInfo += "<td>" + element.categories + "</td>";
-                    toolInfo += "</tr>";
-
-                    $('#insertProducts').append(toolInfo);
-                });
+        function updatePage() {
+            // make request to inventory.json
+            $.get('./data/inventory.json').done(function(inventory) {
+                let inventoryHTML = createHTML(inventory); // create HTML string
+                $('#insertProducts').html(inventoryHTML); // update the DOM with the new HTML
+            }).fail(function(jqXhr, status, error) {
+                console.log(jqXhr);
+                console.log(status);
+                console.log(error);
             });
+        }
+
+        updatePage();
+
+        // code the refresh-btn refresh the page when clicked
+        $('#refresh-btn').on('click', function () {
+
+            updatePage();
         });
 
         $('#submit').on('click',function (){
 
+            // const receiveJSON = JSON.parse(sendJSON);
+
             let tool = "";
 
-            $('#input-tool').check(function(){
-                tool = $(this).attr($('value'))
-			})
+            // $('#input-tool').check(function(){
+            //     tool = $(this).attr($('value'))
+			// })
 
-            console.log($(tool));
+            // console.log($(tool));
 
 
-            let newTool = {
-                title: $('#input-title').val(),
-                quantity: $('#input-quantity').val(),
-                categories: [$('#input-price').attr('value')],
-                price: $('#input-price').val()
-			}
+            // let newTool = {
+            //     title: $('#input-title').val(),
+            //     quantity: $('#input-quantity').val(),
+            //     categories: ['tool', 'power'],
+            //     price: $('#input-price').val()
+			// }
 
-            // let toolName = $('#input-title').val();
-            // let quantity = $('#input-quantity').val();
-            // let price = $('#input-price').val();
-            // let categories = []
+			let newToolName = $('#input-title').val();
+            let newToolQuantity = $('#input-quantity').val();
+            let newCategoryTool = "";
+            let price = $('#input-price').val()
 
-            console.log($(newTool));
+
+            $.post('./data/inventory.json', {
+                title: newToolName,
+                quantity: newToolQuantity,
+                categories: ['tool', 'power'],
+                price: price
+            }).done(function(newTool) {
+                // do something with the response
+				alert(`${newTool.quantity} ${newTool.title}(s) was added to the inventory`)
+            });
+
+
+
+            // console.log($(newTool));
+
+            // let sendJSON = JSON.stringify(newTool);
+            // console.log(sendJSON);
+			//
+            // // make request to inventory.json
+            // $.post('./data/inventory.json').done(function(inventory) {
+            //     let inventoryHTML = createHTML(inventory); // create HTML string
+            //     $('#insertProducts').html(inventoryHTML); // update the DOM with the new HTML
+            // }).fail(function(jqXhr, status, error) {
+            //     console.log(jqXhr);
+            //     console.log(status);
+            //     console.log(error);
+            // });
         });
     })();
 </script>
