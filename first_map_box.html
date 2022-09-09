@@ -23,10 +23,11 @@
 
 <!-- Mapbox JS -->
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+<script src="js/keys.js"></script>
 
 <!-- Custom JS -->
 <script>
-    mapboxgl.accessToken = 'pk.eyJ1Ijoiam1ndXRpMDAiLCJhIjoiY2w3dXp0NjRxMDNuYTN2cjFvNThkdndnOCJ9.Gu4RUQAcDh7-tcNCnMv30A';
+    mapboxgl.accessToken = MAPBOX_TOKEN;
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v9',
