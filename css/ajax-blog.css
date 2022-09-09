@@ -1,0 +1,15 @@
+#separate-nav-body {
+    height: 150px;
+}
+
+#id, ul{
+    list-style-type: none;
+}
+
+#id, .name {
+    color: #E0E0E0;
+}
+
+#info {
+
+}
