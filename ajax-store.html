@@ -10,24 +10,24 @@
 		  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
-	<div class="container">
-		<h1 class="mt-5 mb-5 text-center">My Tool Store</h1>
+<div class="container">
+	<h1 class="mt-5 mb-5 text-center">My Tool Store</h1>
 
-		<table id="products" class="table table-bordered">
-			<thead class="table-dark border border-light">
-			<tr>
-				<th>Title</th>
-				<th>Quantity</th>
-				<th>Price</th>
-				<th>Categories</th>
-			</tr>
-			</thead>
-			<tbody id="insertProducts"></tbody>
+	<table id="products" class="table table-bordered">
+		<thead class="table-dark border border-light">
+		<tr>
+			<th>Title</th>
+			<th>Quantity</th>
+			<th>Price</th>
+			<th>Categories</th>
+		</tr>
+		</thead>
+		<tbody id="insertProducts"></tbody>
 
-		</table>
+	</table>
 
-		<button type="button" class="mt-3" id="refresh-btn">Refresh</button>
-	</div>
+	<button type="button" class="mt-3" id="refresh-btn">Refresh</button>
+</div>
 
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"
@@ -46,11 +46,11 @@
         //       HINT: Your data should come back as a JSON object; use console.log() to inspect
         //             its contents and fields
         //       HINT: You will want to target #insertProducts for your new HTML elements
-		//
+        //
         // $.ajax('./data/inventory.json').done(function (data) {
-		//
+        //
         //     $.each(data, function (index, value) {
-		//
+        //
         //         $('#insertProducts').append(
         //             "<tr class=\"table-warning\">" +
         //             "<td>" + value.title + "</td>" +
@@ -63,24 +63,37 @@
         // });
 
         //code the refresh-btn to display the tool inventory when clicked
-		$('#refresh-btn').on('click', function(){
-            $.get('./data/inventory.json').done(function (data){
+        $('#refresh-btn').on('click', function () {
+            $.get('./data/inventory.json').done(function (data) {
 
-                $.each(data, function (index, value) {
+                // const sendJSON = JSON.stringify(data);
+                //
+                // const receiveJSON = JSON.parse(sendJSON);
+                //
+                // console.log(receiveJSON[0].title);
 
-                    $('#insertProducts').append(
+                // let count = 0;
+                //
+                // $('td').html('');
 
-                        "<tr class=\"table-warning\">" +
-                        "<td>" + value.title + "</td>" +
-                        "<td>" + value.quantity + "</td>" +
-                        "<td>" +"$ " + value.price + "</td>" +
-                        "<td>" + value.categories + "</td>" +
-                        "</tr>"
-                    )
-                    console.log($(data.length));
+				$("#insertProducts").empty();
+
+                $.each(data, function (index, element) {
+                    //     // console.log(element);
+                    //     // console.log($(index));
+                    let toolInfo = "";
+                    toolInfo += "<tr class=\"table-warning\">";
+                    toolInfo += "<td>" + element.title + "</td>";
+                    console.log(element.title);
+                    toolInfo += "<td>" + element.quantity + "</td>";
+                    toolInfo += "<td>" + "$ " + element.price + "</td>";
+                    toolInfo += "<td>" + element.categories + "</td>";
+                    toolInfo += "</tr>";
+
+                    $('#insertProducts').append(toolInfo);
                 });
-			});
-		});
+            });
+        });
 
 
     })();

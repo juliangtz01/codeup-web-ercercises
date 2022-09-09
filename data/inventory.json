@@ -39,6 +39,15 @@
         "price": 5,
 
         "_comment1": "This is how you write a comment in JSON file"
+    },{
+    "title": "Shovel",
+    "quantity": 3,
+    "categories": [
+        "tool"
+    ],
+    "price": 11,
+
+    "_comment1": "This is how you write a comment in JSON file"
     }
 
 ]
