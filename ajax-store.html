@@ -44,7 +44,7 @@
 				<label>Categories:</label>
 				<div>
 					<label class="px-3 form-check-label" for="input-tool">tool</label>
-					<input class="form-check-input" type="checkbox" id="input-tool">
+					<input class="form-check-input" type="checkbox" id="input-tool" name="tool" value="tool">
 					<label class="px-3 form-check-label" for="input-powered">powered</label>
 					<input class="form-check-input" type="checkbox" id="input-powered">
 					<label class="px-3 form-check-label" for="input-gas">gas</label>
@@ -145,19 +145,28 @@
 
         $('#submit').on('click',function (){
 
+            let tool = "";
+
+            $('#input-tool').check(function(){
+                tool = $(this).attr($('value'))
+			})
+
+            console.log($(tool));
+
+
             let newTool = {
                 title: $('#input-title').val(),
                 quantity: $('#input-quantity').val(),
-                categories: [$('#input-price').val()],
+                categories: [$('#input-price').attr('value')],
                 price: $('#input-price').val()
 			}
 
-            let toolName = $('#input-title').val();
-            let quantity = $('#input-quantity').val();
-            let price = $('#input-price').val();
-            let categories = []
+            // let toolName = $('#input-title').val();
+            // let quantity = $('#input-quantity').val();
+            // let price = $('#input-price').val();
+            // let categories = []
 
-            console.log(toolName);
+            console.log($(newTool));
         });
     })();
 </script>
