@@ -10,24 +10,46 @@
 		  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
-<div class="container">
-	<h1 class="mt-5 mb-5 text-center">My Tool Store</h1>
+	<div class="container">
+		<h1 class="mt-5 mb-5 text-center">My Tool Store</h1>
 
-	<table id="products" class="table table-bordered">
-		<thead class="table-dark border border-light">
-		<tr>
-			<th>Title</th>
-			<th>Quantity</th>
-			<th>Price</th>
-			<th>Categories</th>
-		</tr>
-		</thead>
-		<tbody id="insertProducts"></tbody>
+		<table id="products" class="table table-bordered">
+			<thead class="table-dark border border-light">
+			<tr>
+				<th>Title</th>
+				<th>Quantity</th>
+				<th>Price</th>
+				<th>Categories</th>
+			</tr>
+			</thead>
+			<tbody id="insertProducts"></tbody>
 
-	</table>
+		</table>
 
-	<button type="button" class="mt-3" id="refresh-btn">Refresh</button>
-</div>
+		<button type="button" class="mt-3" id="refresh-btn">Refresh</button>
+	</div>
+
+	<!---- Input fields to add to the JSON file --->
+
+
+	<form>
+		<div class="container">
+			<div class="pt-5 form-group row gap-grid gap-3">
+				<label for="input-title">Tool Item: </label>
+				<input type="text" class="width-30" id="input-title">
+				<label for="input-quantity">Quantity: </label>
+				<input type="text" id="input-quantity">
+				<label for="input-price">Price: </label>
+				<input type="text" id="input-price">
+				<label>Categories:</label>
+				<div>
+					<label class="form-check-label" for="input-categories">tool</label>
+					<input class="form-check-input" type="checkbox" id="input-categories">
+				</div>
+
+			</div>
+		</div>
+	</form>
 
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"
@@ -67,6 +89,7 @@
             $.get('./data/inventory.json').done(function (data) {
 
                 // const sendJSON = JSON.stringify(data);
+                console.log(data);
                 //
                 // const receiveJSON = JSON.parse(sendJSON);
                 //
@@ -76,7 +99,7 @@
                 //
                 // $('td').html('');
 
-				$("#insertProducts").empty();
+                $("#insertProducts").empty();
 
                 $.each(data, function (index, element) {
                     //     // console.log(element);
@@ -84,7 +107,6 @@
                     let toolInfo = "";
                     toolInfo += "<tr class=\"table-warning\">";
                     toolInfo += "<td>" + element.title + "</td>";
-                    console.log(element.title);
                     toolInfo += "<td>" + element.quantity + "</td>";
                     toolInfo += "<td>" + "$ " + element.price + "</td>";
                     toolInfo += "<td>" + element.categories + "</td>";
