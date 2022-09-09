@@ -133,6 +133,32 @@
 
             // console.log($(tool));
 
+			const fs = require('fs');
+
+            //read json file
+            const file = fs.readFileSync('./data/inventory.json')
+
+
+            let newToolName = $('#input-title').val();
+            let newToolQuantity = $('#input-quantity').val();
+            // let newCategoryTool = "";
+            let price = $('#input-price').val()
+
+            const newTool = {
+                title: newToolName,
+                quantity: newToolQuantity,
+                categories: ['tool', 'power'],
+                price: price
+            }
+
+            //append data to json file
+			const json = JSON.parse(file.toString())
+
+			//add json element to json object
+			json.push(newTool);
+
+            fs.writeFileSync('./data/inventory.json', JSON.stringify(newTool))
+
 
             // let newTool = {
             //     title: $('#input-title').val(),
@@ -141,21 +167,23 @@
             //     price: $('#input-price').val()
 			// }
 
-			let newToolName = $('#input-title').val();
-            let newToolQuantity = $('#input-quantity').val();
-            let newCategoryTool = "";
-            let price = $('#input-price').val()
 
 
-            $.post('./data/inventory.json', {
-                title: newToolName,
-                quantity: newToolQuantity,
-                categories: ['tool', 'power'],
-                price: price
-            }).done(function(newTool) {
-                // do something with the response
-				alert(`${newTool.quantity} ${newTool.title}(s) was added to the inventory`)
-            });
+			// let newToolName = $('#input-title').val();
+            // let newToolQuantity = $('#input-quantity').val();
+            // let newCategoryTool = "";
+            // let price = $('#input-price').val()
+
+
+            // $.post('./data/inventory.json', {
+            //     title: newToolName,
+            //     quantity: newToolQuantity,
+            //     categories: ['tool', 'power'],
+            //     price: price
+            // }).done(function(newTool) {
+            //     // do something with the response
+			// 	alert(`${newTool.quantity} ${newTool.title}(s) was added to the inventory`)
+            // });
 
 
 
