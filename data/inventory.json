@@ -30,8 +30,7 @@
             "tool"
         ],
         "price": 10
-    },
-    {
+    }, {
         "title": "Pliers",
         "quantity": 5,
         "categories": [
@@ -41,7 +40,6 @@
 
         "_comment1": "This is how you write a comment in JSON file"
     }
-
 
 ]
 

@@ -26,7 +26,7 @@
 
 		</table>
 
-		<button class="mt-3">Refresh</button>
+		<button type="button" class="mt-3" id="refresh-btn">Refresh</button>
 	</div>
 
 
@@ -46,22 +46,42 @@
         //       HINT: Your data should come back as a JSON object; use console.log() to inspect
         //             its contents and fields
         //       HINT: You will want to target #insertProducts for your new HTML elements
+		//
+        // $.ajax('./data/inventory.json').done(function (data) {
+		//
+        //     $.each(data, function (index, value) {
+		//
+        //         $('#insertProducts').append(
+        //             "<tr class=\"table-warning\">" +
+        //             "<td>" + value.title + "</td>" +
+        //             "<td>" + value.quantity + "</td>" +
+        //             "<td>" +"$ " + value.price + "</td>" +
+        //             "<td>" + value.categories + "</td>" +
+        //             "</tr>"
+        //         )
+        //     });
+        // });
 
-        $.ajax('./data/inventory.json').done(function (data) {
+        //code the refresh-btn to display the tool inventory when clicked
+		$('#refresh-btn').on('click', function(){
+            $.get('./data/inventory.json').done(function (data){
 
-            $.each(data, function (index, value) {
+                $.each(data, function (index, value) {
 
-                $('#insertProducts').append(
-                    "<tr class=\"table-warning\">" +
-                    "<td>" + value.title + "</td>" +
-                    "<td>" + value.quantity + "</td>" +
-                    "<td>" +"$ " + value.price + "</td>" +
-                    "<td>" + value.categories + "</td>" +
-                    "</tr>"
-                )
-            });
+                    $('#insertProducts').append(
 
-        });
+                        "<tr class=\"table-warning\">" +
+                        "<td>" + value.title + "</td>" +
+                        "<td>" + value.quantity + "</td>" +
+                        "<td>" +"$ " + value.price + "</td>" +
+                        "<td>" + value.categories + "</td>" +
+                        "</tr>"
+                    )
+                    console.log($(data.length));
+                });
+			});
+		});
+
 
     })();
 </script>
