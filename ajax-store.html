@@ -11,12 +11,12 @@
 </head>
 <body>
 	<div class="container">
-		<h1>My Tool Store</h1>
+		<h1 class="mt-5 mb-5 text-center">My Tool Store</h1>
 
-		<table id="products">
-			<thead>
+		<table id="products" class="table table-bordered">
+			<thead class="table-dark border border-light">
 			<tr>
-				<th class="gap-3">Title</th>
+				<th>Title</th>
 				<th>Quantity</th>
 				<th>Price</th>
 				<th>Categories</th>
@@ -52,10 +52,10 @@
             $.each(data, function (index, value) {
 
                 $('#insertProducts').append(
-                    "<tr>" +
+                    "<tr class=\"table-warning\">" +
                     "<td>" + value.title + "</td>" +
                     "<td>" + value.quantity + "</td>" +
-                    "<td>" + value.price + "</td>" +
+                    "<td>" +"$ " + value.price + "</td>" +
                     "<td>" + value.categories + "</td>" +
                     "</tr>"
                 )
