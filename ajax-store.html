@@ -122,6 +122,14 @@
                 $.each(data, function (index, element) {
                     //     // console.log(element);
                     //     // console.log($(index));
+					//
+
+                    //    "input-powered">powered</label>
+                    //
+                    //        "input-gas">gas</label>
+                    //
+                    //            "input-outdoor">outdoor</label>
+                    //            id="input-outdoor">
                     let toolInfo = "";
                     toolInfo += "<tr class=\"table-warning\">";
                     toolInfo += "<td>" + element.title + "</td>";
@@ -137,12 +145,19 @@
 
         $('#submit').on('click',function (){
 
-            let toolName = $('#input-tool').val();
-            let quantity = "";
-            let price = "";
+            let newTool = {
+                title: $('#input-title').val(),
+                quantity: $('#input-quantity').val(),
+                categories: [$('#input-price').val()],
+                price: $('#input-price').val()
+			}
+
+            let toolName = $('#input-title').val();
+            let quantity = $('#input-quantity').val();
+            let price = $('#input-price').val();
             let categories = []
 
-            console.log($(toolName));
+            console.log(toolName);
         });
     })();
 </script>
