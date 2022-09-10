@@ -22,8 +22,10 @@ body {
 #contact-tweet {
     text-align: center;
     border-radius: 16px;
-    height: 30px;
-    font-weight: bold;
+    height: 35px;
+    font-weight: bolder;
+    background-color: rgb(100,149,237);
+    color: white;
 }
 
 #iraq-image {
@@ -35,4 +37,13 @@ body {
     height: 100px;
     width: 145.7px;
 }
+
+.info-section {
+    background-color: #B4D5FF;
+}
+
+.icon-color {
+    color: rgb(0,0,128);
+}
+
 
