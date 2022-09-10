@@ -6,11 +6,15 @@ body {
     height: 150px;
 }
 
-#id, ul{
+#twitter-icon {
+    color: blue;
+}
+
+#info>ul{
     list-style-type: none;
 }
 
-#id, .name {
+.name {
     color: #E0E0E0;
 }
 
