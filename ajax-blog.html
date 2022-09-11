@@ -176,38 +176,41 @@
 					<div class="row border bg-light blog-post">
 						<div class="col-auto"></div>
 					</div>
-					<div class="row border bg-light py-2 my-3">
-						<div class="col-12  py-2">
-							<dv>
-								My First Blog Post:
-							</dv>
+					<div id="d-body">
+						<div class="row border bg-light py-2 my-3">
+							<div class="col-12  py-2">
+								<dv>
+									My First Blog Post:
+								</dv>
+							</div>
+							<div class="col-12  py-2">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							</div>
+							<div class="col-12  py-2">
+								Interest: greek
+							</div>
+							<div class="col-12  py-2">
+								Date Posted: January 25, 2015
+							</div>
 						</div>
-						<div class="col-12  py-2">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-						</div>
-						<div class="col-12  py-2">
-							Interest: greek
-						</div>
-						<div class="col-12  py-2">
-							Date Posted: January 25, 2015
+						<div class="row border bg-light py-2 my-3">
+							<div class="col-12  py-2">
+								<dv>
+									My First Blog Post:
+								</dv>
+							</div>
+							<div class="col-12  py-2">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							</div>
+							<div class="col-12  py-2">
+								Interest: greek
+							</div>
+							<div class="col-12  py-2">
+								Date Posted: January 25, 2015
+							</div>
 						</div>
 					</div>
-					<div class="row border bg-light py-2 my-3">
-						<div class="col-12  py-2">
-							<dv>
-								My First Blog Post:
-							</dv>
-						</div>
-						<div class="col-12  py-2">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-						</div>
-						<div class="col-12  py-2">
-							Interest: greek
-						</div>
-						<div class="col-12  py-2">
-							Date Posted: January 25, 2015
-						</div>
-					</div>
+
 				</div>
 				<div class="col-3 show-large">
 					<div class="row d-flex align-items-center">
@@ -254,5 +257,23 @@
 		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
 		crossorigin="anonymous"></script>
 
+	<!-- Below is where we will code to show the tweets from our blog.json file -->
+	<script>
+		//crate a function to capture the information from the json file
+		//and update the html page
+        function updatePage() {
+            // make request to inventory.json
+            $.get('./data/inventory.json').done(function(blog) {
+                // create HTML string
+                let blogHTML = createHTML(blog);
+                // update the DOM with the new HTML
+                $('#d-body').html(blogHTML);
+            }).fail(function(jqXhr, status, error) {
+                console.log(jqXhr);
+                console.log(status);
+                console.log(error);
+            });
+        }
+	</script>
 </body>
 </html>
