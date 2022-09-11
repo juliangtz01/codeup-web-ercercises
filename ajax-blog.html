@@ -176,6 +176,7 @@
 					<div class="row border bg-light blog-post">
 						<div class="col-auto"></div>
 					</div>
+					<!-- will use the id="d-body" to insert the blog.json information -->
 					<div id="d-body">
 						<div class="row border bg-light py-2 my-3">
 							<div class="col-12  py-2">
@@ -263,7 +264,7 @@
 		//and update the html page
         function updatePage() {
             // make request to inventory.json
-            $.get('./data/inventory.json').done(function(blog) {
+            $.get('./data/blog.json').done(function(blog) {
                 // create HTML string
                 let blogHTML = createHTML(blog);
                 // update the DOM with the new HTML
@@ -273,6 +274,26 @@
                 console.log(status);
                 console.log(error);
             });
+        }
+
+		//create a function that takes in the json information
+		//and then converts it to be read in with the html page
+        function createHTML(blog) {
+            // loop through blog and create an HTML string for each blog
+            let html = '';
+            for (let i = 0; i < blog.length; i += 1) {
+                html += '<div class="row border bg-light py-2 my-3">' +
+                    '		<div class="col-12  py-2">' +
+                    '			<dv>' + blog[i].title +':' + '</dv>' +
+                    '		</div>' +
+                    '		<div class="col-12  py-2">' + blog[0].content +
+					'		</div>' +
+                    '		<div class="col-12  py-2">' + 'Interest: ' + blog[i].categories +
+                    '		</div>' +
+                    '		<div class="col-12  py-2">' +
+                    '		Date Posted: ' + blog[i].date + '</div>'
+            }
+            return html;
         }
 	</script>
 </body>
