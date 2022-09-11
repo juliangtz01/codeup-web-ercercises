@@ -15,7 +15,7 @@ body {
 }
 
 .name {
-    color: #E0E0E0;
+    color: rgb(192,192,192);
 }
 
 #twitter-check {
@@ -27,6 +27,7 @@ body {
     text-align: center;
     border-radius: 16px;
     height: 35px;
+    max-width: 300px;
     font-weight: bolder;
     background-color: rgb(100,149,237);
     color: white;
@@ -48,10 +49,6 @@ body {
 
 .icon-color {
     color: rgb(0,0,128);
-}
-
-.blog-post {
-    background-color: white;
 }
 
 .show-large {
