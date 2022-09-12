@@ -121,45 +121,9 @@
 
         let marker3 = new mapboxgl.Marker({draggable: true})
             .setLngLat([-96.80349281233205, 32.780180194119325])
-            .setPopup(popup2)
+            .setPopup(popup3)
             .addTo(map);
-
-        // marker.on('dragend', function() {
-        //     let coordinates = marker.getLngLat();
-        //     console.log(coordinates);
-        //     console.log(coordinates.lat);
-        //     console.log(coordinates.lng);
-        // });
-
-
-
-
-        // let lng = -96.80300702078154;
-        // let lat = 32.77861875978127;
-		//
-        // // Reverse Geocoding Example
-        // reverseGeocode({lng: lng, lat: lat}, MAPBOX_TOKEN).then(function(data) {
-        //     console.log(data);
-        //     map.center(data);
-        //     map.zoom(17)
-        // });
     }, 2000);
-
-    // let popup = new mapboxgl.Popup()
-    //     .setHTML('Lincoln Memorial');
-	//
-    // let marker = new mapboxgl.Marker({draggable: true})
-    //     .setLngLat([-96.80300702078154, 32.77861875978127])
-    //     .setPopup(popup)
-    //     .addTo(map);
-	//
-    // marker.on('dragend', function() {
-    //     let coordinates = marker.getLngLat();
-    //     console.log(coordinates);
-    //     console.log(coordinates.lat);
-    //     console.log(coordinates.lng);
-    //     // $('#coords').html('Latitude: ' + coordinates.lat + '<br> Longitude: ' + coordinates.lng);
-    // });
 
 
 </script>
