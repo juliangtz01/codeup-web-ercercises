@@ -26,6 +26,9 @@
 <!-- The HTML element that serves as the Mapbox container -->
 <div id='map'></div>
 
+<!-- set zoom to five -->
+<button id="set-zoom-btn">Set zoom to 5</button>
+
 <!-- Mapbox JS -->
 <!--<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>-->
 
@@ -37,10 +40,19 @@
     mapboxgl.accessToken = MAPBOX_TOKEN;
     var map = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v11',
+        style: 'mapbox://styles/mapbox/dark-v10',
         zoom: 10,
         center: [-98.4916, 29.4252]
     });
+
+
+    //dynamically changing elements in the map
+
+		//zoom
+	$('#set-zoom-btn').on('click', function(){
+        map.setZone(5);
+	});
+
 </script>
 </body>
 </html>
