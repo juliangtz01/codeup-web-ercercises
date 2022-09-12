@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+
+	<link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' />
+
+	<title>Mapbox-1 Exercise</title>
+</head>
+<body>
+
+	<!-- Mini - Exercise 1 (after customizing map)
+
+Create an HTML file called mapbox-1.html
+
+In this file, create a Mapbox map that shows your home town. After 5 seconds, have the map automatically change to a map of the entire United States using a satellite style. Use a setTimeout function to achieve this. -->
+
+	<div id='map' style='width: 400px; height: 300px;'></div>
+	<script>
+
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+	<script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
+
+	<script>
+        mapboxgl.accessToken = 'pk.eyJ1Ijoiam1ndXRpMDAiLCJhIjoiY2w3dXp0NjRxMDNuYTN2cjFvNThkdndnOCJ9.Gu4RUQAcDh7-tcNCnMv30A';
+        const map = new mapboxgl.Map({
+            container: 'map', // container ID
+            style: 'mapbox://styles/mapbox/streets-v11', // style URL
+            center: [-74.5, 40], // starting position [lng, lat]
+            zoom: 9, // starting zoom
+            projection: 'globe' // display the map as a 3D globe
+        });
+        map.on('style.load', () => {
+            map.setFog({}); // Set the default atmosphere style
+        });
+	</script>
+
+</body>
+</html>
