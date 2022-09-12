@@ -24,26 +24,34 @@
 </head>
 <body>
 
-<!-- Exercises
-Please follow the instructions below. Remember to commit your changes after each step. At the end of the exercise, push your changes to GitHub.
+	<!-- Exercises
+	Please follow the instructions below. Remember to commit your changes after each step. At the end of the exercise, push your changes to GitHub.
 
-Generate a Mapbox API Key using the steps from above
-Create a new file named mapbox_maps_api.html and add a map using the next steps.
-Generate a map that shows the city with your favorite restaurant using geocoding.
-Redraw the map of the above location at zoom levels 5, 15, and 20. Do this by simply changing the value of zoom level where the map properties are initially set and refresh the page to see the changes. Can the zoom be changed programmatically after the initial map is drawn?
-Create a marker on your map of the exact location of your favorite restaurant set the zoom to allow for best viewing distance.
-Create a popup with the name of the restaurant.
-Make sure the info window does not display until the marker has been clicked on.
-Refactor your code to display at least three of your favorite restaurants with information about each. Create an array of objects with information about each restaurant to accomplish this. Use a .forEach() loop rather than a for loop.  -->
+	1. Generate a Mapbox API Key using the steps from above
+
+	2. Create a new file named mapbox_maps_api.html and add a map using the next steps.
+
+	3. Generate a map that shows the city with your favorite restaurant using geocoding.
+
+	4. Redraw the map of the above location at zoom levels 5, 15, and 20. Do this by simply changing the value of zoom level where the map properties are initially set and refresh the page to see the changes. Can the zoom be changed programmatically after the initial map is drawn?
+
+	5. Create a marker on your map of the exact location of your favorite restaurant set the zoom to allow for best viewing distance.
+
+	6. Create a popup with the name of the restaurant.
+
+	7. Make sure the info window does not display until the marker has been clicked on.
+
+	8. Refactor your code to display at least three of your favorite restaurants with information about each. Create an array of objects with information about each restaurant to accomplish this. Use a .forEach() loop rather than a for loop.  -->
+
+	<h1>Map of my favorite restaurant in Dallas Texas!</h1>
+
+	<!-- The HTML element that serves as the Mapbox container -->
+	<div id='map'></div>
 
 
 
 
-
-
-
-
-<!-- Mapbox JS -->
+	<!-- Mapbox JS -->
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
 
 <!--jQuery-->
@@ -60,14 +68,82 @@ Refactor your code to display at least three of your favorite restaurants with i
 <script>
     "use strict";
 
+    // 1. Generate a Mapbox API Key using the steps from above
     mapboxgl.accessToken = MAPBOX_TOKEN;
+
+    // 3. Generate a map that shows the city with your favorite restaurant using geocoding.
 
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v9',
-        zoom: 10,
+        zoom: 11,
+        // starting position [lng, lat]
         center: [-96.7970, 32.7767]
     });
+
+    setTimeout(function() {
+
+        // Geocoding display for the McDonald's located at 1000 Commerce St, Dallas, TX, 75202
+        //-96.80300702078154, 32.77861875978127
+        $('h1').text('McDonald\'s located at 1000 Commerce St, Dallas, TX, 75202');
+
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v9',
+            zoom: 18,
+            // starting position [lng, lat]
+            center: [-96.80300702078154, 32.77861875978127]
+        });
+
+
+        // 5. Create a marker on your map of the exact location of your favorite restaurant set the zoom to allow for best viewing distance.
+
+        let popup = new mapboxgl.Popup()
+            .setHTML('McDonal\'s');
+
+        let marker = new mapboxgl.Marker({draggable: true})
+            .setLngLat([-96.80300702078154, 32.77861875978127])
+            .setPopup(popup)
+            .addTo(map);
+
+        marker.on('dragend', function() {
+            let coordinates = marker.getLngLat();
+            console.log(coordinates);
+            console.log(coordinates.lat);
+            console.log(coordinates.lng);
+        });
+
+
+
+
+        // let lng = -96.80300702078154;
+        // let lat = 32.77861875978127;
+		//
+        // // Reverse Geocoding Example
+        // reverseGeocode({lng: lng, lat: lat}, MAPBOX_TOKEN).then(function(data) {
+        //     console.log(data);
+        //     map.center(data);
+        //     map.zoom(17)
+        // });
+    }, 5000);
+
+    // let popup = new mapboxgl.Popup()
+    //     .setHTML('Lincoln Memorial');
+	//
+    // let marker = new mapboxgl.Marker({draggable: true})
+    //     .setLngLat([-96.80300702078154, 32.77861875978127])
+    //     .setPopup(popup)
+    //     .addTo(map);
+	//
+    // marker.on('dragend', function() {
+    //     let coordinates = marker.getLngLat();
+    //     console.log(coordinates);
+    //     console.log(coordinates.lat);
+    //     console.log(coordinates.lng);
+    //     // $('#coords').html('Latitude: ' + coordinates.lat + '<br> Longitude: ' + coordinates.lng);
+    // });
+
+
 </script>
 
 </body>
