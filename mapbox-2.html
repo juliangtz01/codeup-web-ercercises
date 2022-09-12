@@ -5,6 +5,10 @@
 	<meta name="viewport"
 		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
 	<title>Mapbox-2 Exercise</title>
 
 	<!-- Mapbox CSS -->
@@ -30,6 +34,11 @@ Add a popup to the Lincoln Memorial marker that contains the text "Lincoln Memor
 
 Bonus: when the marker is dragged and released, display the coordinates in an h1  -->
 
+<h1>Map of Washington D.C.!</h1>
+
+<!-- The HTML element that serves as the Mapbox container -->
+<div id='map'></div>
+
 
 
 <!-- Mapbox JS -->
@@ -38,10 +47,39 @@ Bonus: when the marker is dragged and released, display the coordinates in an h1
 <!--jQuery-->
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
 <script src="js/keys.js"></script>
 
 <!-- Custom JS -->
 <script>
+	"use strict";
+
+    mapboxgl.accessToken = MAPBOX_TOKEN;
+
+    var map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        center: [-77.050636, 38.889248], // starting position [lng, lat]
+        zoom: 12 // starting zoom
+    });
+
+    // create a marker for the Lincoln Memorial
+
+    var marker = new mapboxgl.Marker()
+        .setLngLat([-77.050636, 38.889248])
+        .addTo(map)
+		.setDraggable(true);
+
+    // create a popup for the Lincoln Memorial
+    var popup = new mapboxgl.Popup()
+        .setHTML('<h2 style="color: grey">' +
+					'Lincoln Memorial' +
+				' </h2>' +
+			'	  <a class="d-flex" href="https://www.nps.gov/linc/index.htm" target="_blank">Website</a>');
+
+    marker.setPopup(popup);
 
 
 </script>
