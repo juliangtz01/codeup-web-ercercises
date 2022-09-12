@@ -9,7 +9,7 @@
 	<!-- Bootstrap CSS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-	<title>Mapbox-3 Exercise</title>
+	<title>Mapbox Maps API Exercise</title>
 
 	<!-- Mapbox CSS -->
 	<link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' />
@@ -24,27 +24,21 @@
 </head>
 <body>
 
-<!-- Mini - Exercise 3 (after geocoding)
+<!-- Exercises
+Please follow the instructions below. Remember to commit your changes after each step. At the end of the exercise, push your changes to GitHub.
 
-Create an HTML file called mapbox-3.html centered on Dallas that is re-centered over Whitefish, Montana using the coordinates from geocoding the physical address.
+Generate a Mapbox API Key using the steps from above
+Create a new file named mapbox_maps_api.html and add a map using the next steps.
+Generate a map that shows the city with your favorite restaurant using geocoding.
+Redraw the map of the above location at zoom levels 5, 15, and 20. Do this by simply changing the value of zoom level where the map properties are initially set and refresh the page to see the changes. Can the zoom be changed programmatically after the initial map is drawn?
+Create a marker on your map of the exact location of your favorite restaurant set the zoom to allow for best viewing distance.
+Create a popup with the name of the restaurant.
+Make sure the info window does not display until the marker has been clicked on.
+Refactor your code to display at least three of your favorite restaurants with information about each. Create an array of objects with information about each restaurant to accomplish this. Use a .forEach() loop rather than a for loop.  -->
 
-Use reverse geocoding with the reverseGeocode function to determine what is at 21.2620 latitude and -157.8060 longitude.  -->
 
 
 
-<h1>Map of Dallas Texas!</h1>
-
-<p></p>
-
-<input id="lat-info" type="text" placeholder="latitude">
-<label for="lat-info"> Latitude</label>
-<input id="lon-info" type="text" placeholder="longitude">
-<label for="lon-info"> Longitude</label>
-
-<button id="search-btn" type="button">Search</button>
-
-<!-- The HTML element that serves as the Mapbox container -->
-<div id='map'></div>
 
 
 
@@ -74,35 +68,6 @@ Use reverse geocoding with the reverseGeocode function to determine what is at 2
         zoom: 10,
         center: [-96.7970, 32.7767]
     });
-
-    setTimeout(function() {
-        // Geocoding Example...
-        geocode("Whitefish, Montana", MAPBOX_TOKEN).then(function(data) {
-            // console.log(data);
-            map.setCenter(data);
-        });
-        $('h1').text('Map of Whitefish, Montana');
-    }, 5000);
-
-
-    let lng = -157.8060;
-    let lat = 21.2620;
-
-    // // Reverse Geocoding Example
-    reverseGeocode({lng: lng, lat: lat}, MAPBOX_TOKEN).then(function(data) {
-        console.log(data);
-    });
-
-    // $('#search-btn').on('click', function(){
-    //     let lng = $('#lon-info').val();
-    //     let lat = $('#lat-info').val();
-    //     //
-    //     // // Reverse Geocoding Example
-    //     reverseGeocode({lng: lng, lat: lat}, MAPBOX_TOKEN).then(function(data) {
-    //         console.log(data[0].plac_name);
-    //     });
-	// });
-
 </script>
 
 </body>

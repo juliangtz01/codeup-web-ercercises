@@ -133,17 +133,17 @@ Bonus: when the marker is dragged and released, display the coordinates in an h1
 
     // Geocoding Example...
     geocode("Paris, Texas", MAPBOX_TOKEN).then(function(data) {
-        console.log(data);
+        // console.log(data);
         map.setCenter(data);
     });
 
     let lng = -95.5555;
     let lat = 33.6618;
 	//
-    // // // Reverse Geocoding Example
-    // reverseGeocode({lng: lng, lat: lat}, MAPBOX_TOKEN).then(function(data) {
-    //     console.log(data);
-    // });
+    // // Reverse Geocoding Example
+    reverseGeocode({lng: lng, lat: lat}, MAPBOX_TOKEN).then(function(data) {
+        console.log(data);
+    });
 
 
 
