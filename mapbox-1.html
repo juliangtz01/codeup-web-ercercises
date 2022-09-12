@@ -68,6 +68,7 @@
 <!--</html>-->
 
 
+<!-- Example provided by instructor -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -132,18 +133,18 @@
 
     // =============== MINI-EXERCISE 1 EXAMPLE SOLUTION
 
-    var map = new mapboxgl.Map({
-        container: 'map', // container ID
-        style: 'mapbox://styles/mapbox/streets-v11', // style URL
-        center: [-98.9370, 29.5615], // starting position [lng, lat]
-        zoom: 12 // starting zoom
-    });
-
-    setTimeout(function() {
-        map.setCenter([-95.7129, 37.0902]);
-        map.setZoom(3);
-        map.setStyle('mapbox://styles/mapbox/satellite-v9');
-    }, 5000);
+    // var map = new mapboxgl.Map({
+    //     container: 'map', // container ID
+    //     style: 'mapbox://styles/mapbox/streets-v11', // style URL
+    //     center: [-98.9370, 29.5615], // starting position [lng, lat]
+    //     zoom: 12 // starting zoom
+    // });
+	//
+    // setTimeout(function() {
+    //     map.setCenter([-95.7129, 37.0902]);
+    //     map.setZoom(3);
+    //     map.setStyle('mapbox://styles/mapbox/satellite-v9');
+    // }, 5000);
 
     // =============== MAPBOX MARKERS AND POPUPS
 
@@ -155,10 +156,17 @@
     //     center: [-98.4916, 29.4252], // starting position [lng, lat]
     //     zoom: 12 // starting zoom
     // });
-    //
-    // let marker = new mapboxgl.Marker()
+	//
+    // let marker = new mapboxgl.Marker({
+	// 	color: 'red'
+	// })
     //     .setLngLat([-98.4916, 29.4252])
     //     .addTo(map);
+	//
+    // let marker2 = new mapboxgl.Marker()
+    //     .setLngLat([-98.4916, 29.4552])
+    //     .addTo(map);
+
 
 
 
@@ -166,25 +174,25 @@
 
     // Create a marker for Whiskey Cake and add a popup with info about it
 
-    // var map = new mapboxgl.Map({
-    //     container: 'map', // container ID
-    //     style: 'mapbox://styles/mapbox/streets-v11', // style URL
-    //     center: [-97.5431, 35.5230], // starting position [lng, lat]
-    //     zoom: 17 // starting zoom
-    // });
+    var map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        center: [-97.5431, 35.5230], // starting position [lng, lat]
+        zoom: 17 // starting zoom
+    });
 
 
     // create a marker
 
-    // var marker = new mapboxgl.Marker()
-    //     .setLngLat([-97.5431, 35.5230])
-    //     .addTo(map);
-    //
-    // // create a popup
-    // var popup = new mapboxgl.Popup()
-    //     .setHTML('<h1 style="color: red">Whiskey Cake</h1><a href="https://whiskeycake.com/">Website</a>');
-    //
-    // marker.setPopup(popup);
+    var marker = new mapboxgl.Marker()
+        .setLngLat([-97.5431, 35.5230])
+        .addTo(map);
+
+    // create a popup
+    var popup = new mapboxgl.Popup()
+        .setHTML('<h1 style="color: red">Whiskey Cake</h1><a href="https://whiskeycake.com/">Website</a>');
+
+    marker.setPopup(popup);
 
 
 </script>
