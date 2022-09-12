@@ -85,12 +85,12 @@
 
         // Geocoding display for the McDonald's located at 1000 Commerce St, Dallas, TX, 75202
         //-96.80300702078154, 32.77861875978127
-        $('h1').text('McDonald\'s located at 1000 Commerce St, Dallas, TX, 75202');
+        $('h1').text('My favorite restaurants to eat at Dallas Texas');
 
         var map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/streets-v9',
-            zoom: 18,
+            zoom: 16,
             // starting position [lng, lat]
             center: [-96.80300702078154, 32.77861875978127]
         });
@@ -98,20 +98,38 @@
 
         // 5. Create a marker on your map of the exact location of your favorite restaurant set the zoom to allow for best viewing distance.
 
-        let popup = new mapboxgl.Popup()
+        let popup1 = new mapboxgl.Popup()
             .setHTML('McDonal\'s');
 
-        let marker = new mapboxgl.Marker({draggable: true})
+
+        let popup2 = new mapboxgl.Popup()
+            .setHTML('Ardy\'s Grill');
+
+        let popup3 = new mapboxgl.Popup()
+            .setHTML('Amazing Wraps');
+
+        let marker1 = new mapboxgl.Marker({draggable: true})
             .setLngLat([-96.80300702078154, 32.77861875978127])
-            .setPopup(popup)
+            .setPopup(popup1)
             .addTo(map);
 
-        marker.on('dragend', function() {
-            let coordinates = marker.getLngLat();
-            console.log(coordinates);
-            console.log(coordinates.lat);
-            console.log(coordinates.lng);
-        });
+
+        let marker2 = new mapboxgl.Marker({draggable: true})
+            .setLngLat([-96.80232714011873, 32.781119512982755])
+            .setPopup(popup2)
+            .addTo(map);
+
+        let marker3 = new mapboxgl.Marker({draggable: true})
+            .setLngLat([-96.80349281233205, 32.780180194119325])
+            .setPopup(popup2)
+            .addTo(map);
+
+        // marker.on('dragend', function() {
+        //     let coordinates = marker.getLngLat();
+        //     console.log(coordinates);
+        //     console.log(coordinates.lat);
+        //     console.log(coordinates.lng);
+        // });
 
 
 
@@ -125,7 +143,7 @@
         //     map.center(data);
         //     map.zoom(17)
         // });
-    }, 5000);
+    }, 2000);
 
     // let popup = new mapboxgl.Popup()
     //     .setHTML('Lincoln Memorial');
