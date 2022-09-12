@@ -5,6 +5,10 @@
 	<title>Geocode Examples</title>
 	<!-- Mapbox CSS -->
 	<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+
+<!--	&lt;!&ndash; Mapbox CSS &ndash;&gt;-->
+<!--	<link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' />-->
+
 	<!-- Custom CSS -->
 	<style>
         #map {
@@ -24,8 +28,13 @@
 <!-- Mapbox JS -->
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
 
+<!--&lt;!&ndash; Mapbox JS &ndash;&gt;-->
+<!--<script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>-->
+
 <!-- Mapbox Geocoder Util Methods -->
 <script src="mapbox-geocoder-utils.js"></script>
+
+<script src="js/keys.js"></script>
 
 <!-- Custom JS -->
 <script>
@@ -38,7 +47,7 @@
     });
 
     // the  geocode method from mapbox-geocoder-utils.js
-    geocode("600 Navarro St #350, San Antonio, TX 78205", YOUR_TOKEN_HERE).then(function(result) {
+    geocode("600 Navarro St #350, San Antonio, TX 78205", MAPBOX_TOKEN).then(function(result) {
         console.log(result);
         map.setCenter(result);
         map.setZoom(20);
