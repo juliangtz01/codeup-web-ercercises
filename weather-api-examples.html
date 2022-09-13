@@ -2,34 +2,177 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+  <!-- Mapbox CSS -->
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' />
+
+  <!-- Custom CSS -->
+
   <title>Weather API Examples</title>
+
+  <style>
+    #map {
+      /* the width and height may be set to any size */
+      width: 100%;
+      height: 500px;
+    }
+  </style>
 </head>
 <body>
 
+  <div class="continer">
+    <div class="row bg-primary text-light">
+      <div class="col-9">
+        <h3>Weather App</h3>
+      </div>
+      <div class="col-3">
+        <div class="text-center d-flex justify-content-center align-items-center">Current city: San Antonio</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mx-0 p-0">
+    <div class="mt-4">
+      <label for="place">Place</label>
+      <input class="mx-4" type="text" id="place" placeholder="Dallas, Tx">
+      <button id="find" type="button">Find</button>
+    </div>
+  </div>
+
+  <div class="container my-4 p-0">
+    <div class="d-flex">
+      <div class="card">
+        <div>2020-04-06</div>
+        <div>75.43 F/ 75.43 F</div>
+        <div>icon</div>
+        <div>Description: overcast clouds</div>
+        <div>Humidity: 71</div>
+        <div>Wind: 584</div>
+        <div>Pressure: 1015</div>
+      </div>
+
+      <div class="card mx-3">
+        <div>2020-04-06</div>
+        <div>75.43 F/ 75.43 F</div>
+        <div>icon</div>
+        <div>Description: overcast clouds</div>
+        <div>Humidity: 71</div>
+        <div>Wind: 584</div>
+        <div>Pressure: 1015</div>
+      </div>
+
+      <div class="card mx-3">
+        <div>2020-04-06</div>
+        <div>75.43 F/ 75.43 F</div>
+        <div>icon</div>
+        <div>Description: overcast clouds</div>
+        <div>Humidity: 71</div>
+        <div>Wind: 584</div>
+        <div>Pressure: 1015</div>
+      </div>
+
+      <div class="card mx-3">
+        <div>2020-04-06</div>
+        <div>75.43 F/ 75.43 F</div>
+        <div>icon</div>
+        <div>Description: overcast clouds</div>
+        <div>Humidity: 71</div>
+        <div>Wind: 584</div>
+        <div>Pressure: 1015</div>
+      </div>
+
+      <div class="card mx-3">
+        <div>2020-04-06</div>
+        <div>75.43 F/ 75.43 F</div>
+        <div>icon</div>
+        <div>Description: overcast clouds</div>
+        <div>Humidity: 71</div>
+        <div>Wind: 584</div>
+        <div>Pressure: 1015</div>
+      </div>
+
+      <div class="card mx-3">
+        <div>2020-04-06</div>
+        <div>75.43 F/ 75.43 F</div>
+        <div>icon</div>
+        <div>Description: overcast clouds</div>
+        <div>Humidity: 71</div>
+        <div>Wind: 584</div>
+        <div>Pressure: 1015</div>
+      </div>
+
+      <div class="card mx-3">
+        <div>2020-04-06</div>
+        <div>75.43 F/ 75.43 F</div>
+        <div>icon</div>
+        <div>Description: overcast clouds</div>
+        <div>Humidity: 71</div>
+        <div>Wind: 584</div>
+        <div>Pressure: 1015</div>
+      </div>
+    </div>
+
+
+
+
+  </div>
+
+  <div class="continer">
+    <!-- The HTML element that serves as the Mapbox container -->
+    <div class="d-flex align-self-end" id='map'></div>
+  </div>
+
+<!-- Mapbox JS -->
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
+
+<!--jQuery-->
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<script src="js/mapbox-geocoder-utils.js"></script>
 
 <script src="js/keys.js"></script>
 
 <script>
   "use strict";
 
-  $.get('https://api.openweathermap.org/data/2.5/forecast', {
-    appid: WEATHER_APP_ID,
-    lat: 29.4252,
-    lon: -98.4916,
-    units: 'imperial'
-  }).done(function(data) {
-    console.log(data);
+  // 1. Generate a Mapbox API Key using the steps from above
+  mapboxgl.accessToken = MAPBOX_TOKEN;
 
-    // console.log(days);
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v9',
+    zoom: 11,
+    // starting position [lng, lat]
+    center: [-96.7970, 32.7767]
+  });
+
+  // $.get('https://api.openweathermap.org/data/2.5/forecast', {
+  //   appid: WEATHER_API_KEY,
+  //   lat: 29.4252,
+  //   lon: -98.4916,
+  //   units: 'imperial'
+  // }).done(function(data) {
+  //   console.log(data);
+  //
+  //   console.log(data.list[0].dt_txt);
 
     // dealing with time
     // convert API date/time response to JS Date Object
     // ... new Date(1629461117 * 1000)
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
-  }).fail(function(error) {
-    console.log(error);
-  });
+  // }).fail(function(error) {
+  //   console.log(error);
+  // });
 
 </script>
 
