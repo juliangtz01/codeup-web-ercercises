@@ -20,6 +20,11 @@
             width: 100%;
             height: 700px;
         }
+
+		.img {
+			max-height: 100%;;
+			max-width: 80%;
+		}
 	</style>
 </head>
 <body>
@@ -98,31 +103,28 @@
 
         // 5. Create a marker on your map of the exact location of your favorite restaurant set the zoom to allow for best viewing distance.
 
-        let popup1 = new mapboxgl.Popup()
-            .setHTML('McDonal\'s');
+		//create an array variable named restaurants to hold the coordinate and name objects of the restaurants
+		let restaurants =[];
 
+        //store the coordinates and the name of the restaurant in proper object fields
+        restaurants =
+			[   {coordinates: [-96.80300702078154, 32.77861875978127], name: 'McDonal\'s', img: $('img').html($('<img src="img/mcdonalds.jpeg">'))},
+				{coordinates: [-96.80232714011873, 32.781119512982755], name: 'Ardy\'s Grill', img: $('img').html($('<img src="img/ardy_grill.jpeg">'))},
+                {coordinates: [-96.80349281233205, 32.780180194119325], name: 'Amazing Wraps', img: $('img').html($('<img src="img/amazing_wraps.jpeg">'))}
+			];
 
-        let popup2 = new mapboxgl.Popup()
-            .setHTML('Ardy\'s Grill');
+        //create a foreach loop to loop through the array and place makers and popups on the proper locations of the restaurants
+		restaurants.forEach(item => {
+            let popup = new mapboxgl.Popup()
+				.setHTML('<h4 class="d-flex justify-content-center">' + item.name + '</h4><br>' +
+					'     <div class="d-flex justify-content-center img"><img>' + item.img + '</div>');
 
-        let popup3 = new mapboxgl.Popup()
-            .setHTML('Amazing Wraps');
+            let marker = new mapboxgl.Marker()
+				.setLngLat(item.coordinates)
+				.setPopup(popup)
+				.addTo(map);
+        });
 
-        let marker1 = new mapboxgl.Marker({draggable: true})
-            .setLngLat([-96.80300702078154, 32.77861875978127])
-            .setPopup(popup1)
-            .addTo(map);
-
-
-        let marker2 = new mapboxgl.Marker({draggable: true})
-            .setLngLat([-96.80232714011873, 32.781119512982755])
-            .setPopup(popup2)
-            .addTo(map);
-
-        let marker3 = new mapboxgl.Marker({draggable: true})
-            .setLngLat([-96.80349281233205, 32.780180194119325])
-            .setPopup(popup3)
-            .addTo(map);
     }, 2000);
 
 
