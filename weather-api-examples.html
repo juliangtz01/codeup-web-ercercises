@@ -48,82 +48,10 @@
 
   <div class="container my-4 p-0">
     <div class="d-flex" id="weather-card">
-      <div class="card mx-3 p-2">
-        <div id="date" class="text-center">2020-04-06</div>
-        <div id="temp" class="text-center">75.43 &degF / 75.43 &degF</div>
-        <div id="icon" class="text-center">
-          <img id="wicon" src="" alt="Weather icon">
+      <div id="weather-body" class="d-flex">
         </div>
-        <div id="description">Description: overcast clouds</div>
-        <div id="humidity">Humidity: 71</div>
-        <div id="wind-speed">Wind: 584</div>
-        <div id="pressure">Pressure: 1015</div>
       </div>
-
-<!--      <div class="card mx-3">-->
-<!--        <div>2020-04-06</div>-->
-<!--        <div>75.43 F/ 75.43 F</div>-->
-<!--        <div>icon</div>-->
-<!--        <div>Description: overcast clouds</div>-->
-<!--        <div>Humidity: 71</div>-->
-<!--        <div>Wind: 584</div>-->
-<!--        <div>Pressure: 1015</div>-->
-<!--      </div>-->
-
-<!--      <div class="card mx-3">-->
-<!--        <div>2020-04-06</div>-->
-<!--        <div>75.43 F/ 75.43 F</div>-->
-<!--        <div>icon</div>-->
-<!--        <div>Description: overcast clouds</div>-->
-<!--        <div>Humidity: 71</div>-->
-<!--        <div>Wind: 584</div>-->
-<!--        <div>Pressure: 1015</div>-->
-<!--      </div>-->
-
-<!--      <div class="card mx-3">-->
-<!--        <div>2020-04-06</div>-->
-<!--        <div>75.43 F/ 75.43 F</div>-->
-<!--        <div>icon</div>-->
-<!--        <div>Description: overcast clouds</div>-->
-<!--        <div>Humidity: 71</div>-->
-<!--        <div>Wind: 584</div>-->
-<!--        <div>Pressure: 1015</div>-->
-<!--      </div>-->
-
-<!--      <div class="card mx-3">-->
-<!--        <div>2020-04-06</div>-->
-<!--        <div>75.43 F/ 75.43 F</div>-->
-<!--        <div>icon</div>-->
-<!--        <div>Description: overcast clouds</div>-->
-<!--        <div>Humidity: 71</div>-->
-<!--        <div>Wind: 584</div>-->
-<!--        <div>Pressure: 1015</div>-->
-<!--      </div>-->
-
-<!--      <div class="card mx-3">-->
-<!--        <div>2020-04-06</div>-->
-<!--        <div>75.43 F/ 75.43 F</div>-->
-<!--        <div>icon</div>-->
-<!--        <div>Description: overcast clouds</div>-->
-<!--        <div>Humidity: 71</div>-->
-<!--        <div>Wind: 584</div>-->
-<!--        <div>Pressure: 1015</div>-->
-<!--      </div>-->
-
-<!--      <div class="card mx-3">-->
-<!--        <div>2020-04-06</div>-->
-<!--        <div>75.43 F/ 75.43 F</div>-->
-<!--        <div>icon</div>-->
-<!--        <div>Description: overcast clouds</div>-->
-<!--        <div>Humidity: 71</div>-->
-<!--        <div>Wind: 584</div>-->
-<!--        <div>Pressure: 1015</div>-->
-<!--      </div>-->
     </div>
-
-
-
-
   </div>
 
   <div class="continer">
@@ -147,6 +75,88 @@
 <script>
   "use strict";
 
+  function createHTML(data) {
+
+    //create a variable array to hold the date and time
+    let fullDate = data.list[0].dt_txt.split(' ');
+
+    console.log(fullDate[0]);
+
+    //create a variable to hold the max temp
+    let maxTemp = "";
+
+    //create a variable to hold the low temp
+    let minTemp = "";
+
+    //create a variable to hold the humidity
+    let humidity = "";
+
+    //create a variable to hold the humidity
+    let pressure = "";
+
+    //create a variable to hold the description of the data
+    let descrip = "";
+
+    //create a variable to hold the humidity
+    let wind = "";
+
+    //create a variable to capture the string information for the icon field
+    let iconCode = "";
+
+    //create a variable to hold the http reference to openweathermap.org and the icon code
+    let iconURL = "";
+
+    //create a variable to store the html information
+    let html = '';
+
+    // loop through weather data and create an HTML string for each day
+    for (let i = 0; i < 40; i += 9) {
+
+      //create a variable array to hold the date and time
+      fullDate = data.list[i].dt_txt.split(' ');
+
+      //create a variable to hold the max temp
+      maxTemp = data.list[i].main.temp_max;
+
+      //create a variable to hold the low temp
+      minTemp = data.list[i].main.temp_max;
+
+      //create a variable to hold the humidity
+      humidity = data.list[i].main.humidity;
+
+      //create a variable to hold the humidity
+      pressure = data.list[i].main.pressure;
+
+      //create a variable to hold the description of the data
+      descrip = data.list[i].weather[0].description;
+      // console.log(data.list[i].weather[i].description);
+
+      //create a variable to hold the humidity
+      wind = data.list[i].wind.speed;
+
+      //create a variable to capture the string information for the icon field
+      iconCode = data.list[i].weather[0].icon;
+
+      // console.log(data.list[i].weather[i].icon);
+
+      //create a variable to hold the http reference to openweathermap.org and the icon code
+      iconURL = "http://openweathermap.org/img/w/" + iconCode + ".png";
+
+      html += '<div class="card mx-3 p-2">\n' +
+              '  <div id="date" class="text-center">'+ fullDate[0] + '</div>\n' +
+              '  <div id="temp" class="text-center">' + maxTemp + '&degF' +  minTemp + '&degF</div>\n' +
+              '  <div id="icon" class="text-center">\n' +
+              '    <img id="wicon" src="'+ iconURL + '" alt="Weather icon">\n' +
+              '  </div>\n' +
+              '  <div id="description">Description: ' + descrip + '</div>\n' +
+              '  <div id="humidity">Humidity: ' + humidity + '</div>\n' +
+              '  <div id="wind-speed">Wind: ' + wind + ' mph</div>\n' +
+              '  <div id="pressure">Pressure: ' + pressure + '</div>\n' +
+              '</div>'
+    }
+    return html;
+  }
+
   // 1. Generate a Mapbox API Key using the steps from above
   mapboxgl.accessToken = MAPBOX_TOKEN;
 
@@ -163,6 +173,23 @@
           .addTo(map);
 
   // console.log(map.center[0]);
+
+  $.get('https://api.openweathermap.org/data/2.5/forecast', {
+    appid: WEATHER_API_KEY,
+    lat: 32.7767,
+    lon: -96.7970,
+    units: 'imperial'
+  }).done(function(data) {
+    console.log(data);
+
+    // create HTML string
+    let weatherHTML = createHTML(data);
+
+    // update the DOM with the new HTML
+    $('#weather-body').html(weatherHTML);
+  });
+
+
 
   $('#find').on('click', function(){
 
@@ -195,8 +222,6 @@
 
         //update the current city location with the reverseGeocode data
         $('#current-city').text('Current City: ' + string[1] + ', ' + newState[1]);
-
-
       });
 
       $.get('https://api.openweathermap.org/data/2.5/forecast', {
@@ -207,89 +232,21 @@
       }).done(function(data) {
         console.log(data);
 
-        //create a variable array to hold the date and time
-        let fullDate = data.list[0].dt_txt.split(' ');
+        // create HTML string
+        let weatherHTML = createHTML(data);
 
-        console.log(fullDate[0]);
-
-        //create a variable to hold the max temp
-        let maxTemp = data.list[0].main.temp_max;
-
-        //create a variable to hold the low temp
-        let minTemp = data.list[0].main.temp_max;
-
-        //create a variable to hold the humidity
-        let humidity = data.list[0].main.humidity;
-
-        //create a variable to hold the humidity
-        let pressure = data.list[0].main.pressure;
-
-        //create a variable to hold the description of the data
-        let descrip = data.list[0].weather[0].description;
-        console.log(data.list[0].weather[0].description);
-
-        //create a variable to hold the humidity
-        let wind = data.list[0].wind.speed;
-
-        //create a variable to capture the string information for the icon field
-        let iconCode = data.list[0].weather[0].icon;
-
-        console.log(data.list[0].weather[0].icon);
-
-        //create a variable to hold the http reference to openweathermap.org and the icon code
-        let iconURL = "http://openweathermap.org/img/w/" + iconCode + ".png";
-
-        $('#date').text(fullDate[0]);
-        $('#temp').html(`${maxTemp} &degF / ${minTemp} &degF`);
-        $('#wicon').attr('src', iconURL);
-        $('#description').html(`Description: ${descrip}`);
-        $('#humidity').html(`Humidity: ${humidity}`);
-        $('#wind-speed').html(`Wind: ${wind} mph`);
-        $('#pressure').html(`Pressure: ${pressure}`);
-
-
-
-
-
+        // update the DOM with the new HTML
+        $('#weather-body').html(weatherHTML);
 
         // dealing with time
         // convert API date/time response to JS Date Object
         // ... new Date(1629461117 * 1000)
         // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
-        // }).fail(function(error) {
-        //   console.log(error);
+        }).fail(function(error) {
+          console.log(error);
       });
-      // $('h1').text('Map of Whitefish, Montana');
     });
-
-    function weatherData(data)
-    {
-
-
-
-
-      let html = '';
-
-      html = '<div class="card mx-3">\n' +
-                '<div id="date">2020-04-06</div>\n' +
-                '<div id="temp">75.43 F/ 75.43 F</div>\n' +
-                '<div id="icon">icon</div>\n' +
-                '<div id="description">Description: overcast clouds</div>\n' +
-                '<div id="humidity">Humidity: 71</div>\n' +
-                '<div id="wind-speed">Wind: 584</div>\n' +
-                '<div id="pressure">Pressure: 1015' +
-              '</div>';
-      return html;
-    }
-
-
-
-
   });
-
-
-
-
 
 </script>
 
