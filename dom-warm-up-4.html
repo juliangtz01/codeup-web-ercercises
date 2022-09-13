@@ -28,6 +28,18 @@
           OPTIONAL BONUS: if non-numeric inputs are in one or both the inputs, disable the sum button.
      */
 
+	$('#sum-btn').on('click', function(){
+        //create variables to store the values of the input fields
+        let num1 = $('#num-input-1').val();
+        let num2 = $('#num-input-2').val();
+
+        // //creat a variable name sum to add both numbers
+        // let sum = Number(num1) + Number(num2);
+
+        //you can use the sum variable or just wrap both num variables with Number() function to add them together
+        $('#output').text(Number(num1) + Number(num2));
+	})
+
 </script>
 </body>
 </html>
