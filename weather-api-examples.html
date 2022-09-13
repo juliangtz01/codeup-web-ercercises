@@ -40,14 +40,14 @@
 
   <div class="container mx-0 p-0">
     <div class="mt-4">
-      <label for="place">Place</label>
+      <label class="px-2" for="place">Place</label>
       <input class="mx-4" type="text" id="place" placeholder="Dallas, Tx">
       <button id="find" type="button">Find</button>
     </div>
   </div>
 
   <div class="container my-4 p-0">
-    <div class="d-flex">
+    <div class="d-flex" id="weather-card">
       <div class="card">
         <div>2020-04-06</div>
         <div>75.43 F/ 75.43 F</div>
@@ -156,15 +156,43 @@
     center: [-96.7970, 32.7767]
   });
 
-  // $.get('https://api.openweathermap.org/data/2.5/forecast', {
-  //   appid: WEATHER_API_KEY,
-  //   lat: 29.4252,
-  //   lon: -98.4916,
-  //   units: 'imperial'
-  // }).done(function(data) {
-  //   console.log(data);
-  //
-  //   console.log(data.list[0].dt_txt);
+  let marker = new mapboxgl.Marker()
+          .setLngLat([-96.7970, 32.7767])
+          .addTo(map);
+
+  // console.log(map.center[0]);
+
+  $('#find').on('click', function(){
+
+    let findLocation = $('#place').val();
+
+    // Geocoding Example...
+    geocode(findLocation, MAPBOX_TOKEN).then(function(data) {
+      console.log(data);
+      map.setCenter(data);
+
+      let newLocation = [data]
+
+      console.log(newLocation);
+
+      let newMarker = new mapboxgl.Marker()
+              .setLngLat(newLocation[0])
+              .addTo(map);
+    });
+    // $('h1').text('Map of Whitefish, Montana');
+  });
+
+
+
+  $.get('https://api.openweathermap.org/data/2.5/forecast', {
+    appid: WEATHER_API_KEY,
+    lat: 29.4252,
+    lon: -98.4916,
+    units: 'imperial'
+  }).done(function(data) {
+    console.log(data);
+
+    console.log(data.list[0].dt_txt);
 
     // dealing with time
     // convert API date/time response to JS Date Object
@@ -172,7 +200,7 @@
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
   // }).fail(function(error) {
   //   console.log(error);
-  // });
+  });
 
 </script>
 
