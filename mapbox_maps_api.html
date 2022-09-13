@@ -21,7 +21,7 @@
             height: 700px;
         }
 
-		#img {
+		#pic {
 			max-height: 100%;;
 			max-width: 80%;
 		}
@@ -108,16 +108,16 @@
 
         //store the coordinates and the name of the restaurant in proper object fields
         restaurants =
-			[   {coordinates: [-96.80300702078154, 32.77861875978127], name: 'McDonal\'s', img : [$('#pic').html($('<img src="img/mcdonalds.jpeg">'))]},
-				{coordinates: [-96.80232714011873, 32.781119512982755], name: 'Ardy\'s Grill', img : [$('#pic').html($('<img src="img/ardy_grill.jpeg">'))]},
-                {coordinates: [-96.80349281233205, 32.780180194119325], name: 'Amazing Wraps', img : [$('#pic').html($('<img src="img/amazing_wraps.jpeg">'))]}
+			[   {coordinates: [-96.80300702078154, 32.77861875978127], name: 'McDonal\'s', img : "img/mcdonalds.jpeg"},
+				{coordinates: [-96.80232714011873, 32.781119512982755], name: 'Ardy\'s Grill', img : "img/ardy_grill.jpeg"},
+                {coordinates: [-96.80349281233205, 32.780180194119325], name: 'Amazing Wraps', img : "img/amazing_wraps.jpeg"}
 			];
 
         //create a foreach loop to loop through the array and place makers and popups on the proper locations of the restaurants
 		restaurants.forEach(item => {
             let popup = new mapboxgl.Popup()
 				.setHTML('<h4 class="d-flex justify-content-center">' + item.name + '</h4><br>' +
-					'     <div id="pic" class="d-flex justify-content-center">'+ item.img +'</div>');
+					'     <div class="d-flex justify-content-center"><img id="pic" src="'+ item.img + '"></div>');
 
             let marker = new mapboxgl.Marker()
 				.setLngLat(item.coordinates)
