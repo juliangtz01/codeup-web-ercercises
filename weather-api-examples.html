@@ -81,7 +81,9 @@
     //create a variable array to hold the date and time
     let fullDate = data.list[0].dt_txt.split(' ');
 
-    console.log(fullDate[0]);
+    // console.log(data);
+
+    // console.log(fullDate[0]);
 
     //create a variable to hold the max temp
     let maxTemp = "";
@@ -166,22 +168,24 @@
     style: 'mapbox://styles/mapbox/streets-v9',
     zoom: 11,
     // starting position [lng, lat]
-    center: [-96.7970, 32.7767]
+    center: [-96.803914, 32.792206]
   });
 
-  let marker = new mapboxgl.Marker()
-          .setLngLat([-96.7970, 32.7767])
+  let marker = new mapboxgl.Marker({draggable: true})
+          .setLngLat([-96.803914, 32.792206])
           .addTo(map);
+
+  console.log(marker);
 
   // console.log(map.center[0]);
 
   $.get('https://api.openweathermap.org/data/2.5/forecast', {
     appid: WEATHER_API_KEY,
-    lat: 32.7767,
-    lon: -96.7970,
+    lat: 32.792206,
+    lon: -96.803914,
     units: 'imperial'
   }).done(function(data) {
-    console.log(data);
+    // console.log(data);
 
     // create HTML string
     let weatherHTML = createHTML(data);
@@ -199,6 +203,7 @@
     // Geocoding Example...
     geocode(findLocation, MAPBOX_TOKEN).then(function(data) {
       map.setCenter(data);
+      // console.log(data);
 
       //create an array variable to sore the lon and lat from the data object
       let newLocation = [data]
@@ -215,15 +220,51 @@
       // // Reverse Geocoding Example
       reverseGeocode({lng: lon, lat: lat}, MAPBOX_TOKEN).then(function(data) {
         let string = data.split(',');
-        console.log(data);
-        console.log(string);
+        // console.log(data);
+        // console.log(string);
         // console.log(string[1]);
+
+        //create variables to see if the city is Dallas and the state is Texas
+        let isCityDallas = false;
+        let isStateTexas = false;
+
+        //create a for loop to compare the city
+        for(let x = 0; x < string.length; x++)
+        {
+          if(string[x] === ' Dallas')
+          {
+            isCityDallas = true;
+          }
+        }
+
+        //create a for loop to compare the state
+        for(let x = 0; x < string.length; x++)
+        {
+          if(string[x] === ' Texas 75201')
+          {
+            isStateTexas = true;
+          }
+        }
+
+        // console.log(isStateTexas);
+        // console.log(isCityDallas);
+
         let state = string[2];
         let newState = state.split(' ');
-        console.log(newState[1]);
+        // console.log(newState[1]);
 
-        //update the current city location with the reverseGeocode data
-        $('#current-city').text('Current City: ' + string[1] + ', ' + newState[1]);
+        // console.log(newState);
+
+        if(isCityDallas && isStateTexas)
+        {
+          //update the current city location with the reverseGeocode data
+          $('#current-city').text('Current City: Dallas, Texas');
+        }
+        else
+        {
+          //update the current city location with the reverseGeocode data
+          $('#current-city').text('Current City: ' + string[1] + ', ' + newState[1]);
+        }
       });
 
       $.get('https://api.openweathermap.org/data/2.5/forecast', {
