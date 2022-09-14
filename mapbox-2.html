@@ -60,20 +60,20 @@ Bonus: when the marker is dragged and released, display the coordinates in an h1
 
     mapboxgl.accessToken = MAPBOX_TOKEN;
 
-    // var map = new mapboxgl.Map({
-    //     container: 'map', // container ID
-    //     style: 'mapbox://styles/mapbox/streets-v11', // style URL
-    //     center: [-77.050636, 38.889248], // starting position [lng, lat]
-    //     zoom: 12 // starting zoom
-    // });
+    var map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        center: [-77.050636, 38.889248], // starting position [lng, lat]
+        zoom: 12 // starting zoom
+    });
 
-    // // create a marker for the Lincoln Memorial
-	//
-    // var marker = new mapboxgl.Marker({
-	// 	draggable: true
-	// })
-    //     .setLngLat([-77.050636, 38.889248])
-    //     .addTo(map);
+    // create a marker for the Lincoln Memorial
+
+    var marker = new mapboxgl.Marker({
+		draggable: true
+	})
+        .setLngLat([-77.050636, 38.889248])
+        .addTo(map);
 
     // // create a popup for the Lincoln Memorial
     // var popup = new mapboxgl.Popup()
@@ -114,36 +114,36 @@ Bonus: when the marker is dragged and released, display the coordinates in an h1
     //     .setPopup(popup)
     //     .addTo(map);
     //
-    // marker.on('dragend', function() {
-    //     let coordinates = marker.getLngLat();
-    //     console.log(coordinates);
-    //     console.log(coordinates.lat);
-    //     console.log(coordinates.lng);
-    //     $('#coords').html('Latitude: ' + coordinates.lat + '<br> Longitude: ' + coordinates.lng);
-    // });
+    marker.on('dragend', function() {
+        let coordinates = marker.getLngLat();
+        console.log(coordinates);
+        console.log(coordinates.lat);
+        console.log(coordinates.lng);
+        $('#coords').html('Latitude: ' + coordinates.lat + '<br> Longitude: ' + coordinates.lng);
+    });
 
     // ========== GEOCODING AND REVERSE GEOCODING
 
-    var map = new mapboxgl.Map({
-        container: 'map', // container ID
-        style: 'mapbox://styles/mapbox/streets-v11', // style URL
-        center: [-98.4916, 29.4252], // starting position [lng, lat]
-        zoom: 11 // starting zoom
-    });
-
-    // Geocoding Example...
-    geocode("Paris, Texas", MAPBOX_TOKEN).then(function(data) {
-        // console.log(data);
-        map.setCenter(data);
-    });
-
-    let lng = -95.5555;
-    let lat = 33.6618;
+    // var map = new mapboxgl.Map({
+    //     container: 'map', // container ID
+    //     style: 'mapbox://styles/mapbox/streets-v11', // style URL
+    //     center: [-98.4916, 29.4252], // starting position [lng, lat]
+    //     zoom: 11 // starting zoom
+    // });
 	//
-    // // Reverse Geocoding Example
-    reverseGeocode({lng: lng, lat: lat}, MAPBOX_TOKEN).then(function(data) {
-        console.log(data);
-    });
+    // // Geocoding Example...
+    // geocode("Paris, Texas", MAPBOX_TOKEN).then(function(data) {
+    //     // console.log(data);
+    //     map.setCenter(data);
+    // });
+	//
+    // let lng = -95.5555;
+    // let lat = 33.6618;
+	// //
+    // // // Reverse Geocoding Example
+    // reverseGeocode({lng: lng, lat: lat}, MAPBOX_TOKEN).then(function(data) {
+    //     console.log(data);
+    // });
 
 
 

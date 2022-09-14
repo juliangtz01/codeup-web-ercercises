@@ -21,8 +21,9 @@
     #map {
       /* the width and height may be set to any size */
       width: 100%;
-      height: 500px;
+      height: 300px;
     }
+
   </style>
 </head>
 <body>
@@ -203,8 +204,8 @@
       let newLocation = [data]
 
       //create variables to store the lat and log from the data object individually
-      let lon = data[0];
-      let lat = data[1];
+      var lon = data[0];
+      var lat = data[1];
 
       //create a marker with the new location information
       let newMarker = new mapboxgl.Marker()
@@ -214,11 +215,12 @@
       // // Reverse Geocoding Example
       reverseGeocode({lng: lon, lat: lat}, MAPBOX_TOKEN).then(function(data) {
         let string = data.split(',');
-        // console.log(string);
+        console.log(data);
+        console.log(string);
         // console.log(string[1]);
         let state = string[2];
         let newState = state.split(' ');
-        // console.log(newState[1]);
+        console.log(newState[1]);
 
         //update the current city location with the reverseGeocode data
         $('#current-city').text('Current City: ' + string[1] + ', ' + newState[1]);
@@ -226,11 +228,13 @@
 
       $.get('https://api.openweathermap.org/data/2.5/forecast', {
         appid: WEATHER_API_KEY,
-        lat: 29.4252,
-        lon: -98.4916,
+        // lat: 29.4252,
+        lat: lat,
+        // lon: -98.4916,
+        lon: lon,
         units: 'imperial'
       }).done(function(data) {
-        console.log(data);
+        // console.log(data);
 
         // create HTML string
         let weatherHTML = createHTML(data);
