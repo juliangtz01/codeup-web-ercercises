@@ -75,6 +75,24 @@
 
 <script>
   "use strict";
+  //function to get the weather info
+  function getWeatherInfo(lat, lon)
+  {
+    $.get('https://api.openweathermap.org/data/2.5/forecast', {
+      appid: WEATHER_API_KEY,
+      lat: lat,
+      lon: lon,
+      units: 'imperial'
+    }).done(function(data) {
+      // console.log(data);
+
+      // create HTML string
+      let weatherHTML = createHTML(data);
+
+      // update the DOM with the new HTML
+      $('#weather-body').html(weatherHTML);
+    });
+  }
 
   //create a function named useReverseGeo to capture the coordinates of the location
   function useReverseGeo(lat, lon)
@@ -98,7 +116,7 @@
         $('#current-city').text('Current City: ' + string[1]);
       }
     });
-
+    getWeatherInfo(lat, lon)
   }
 
   function createHTML(data) {
@@ -218,6 +236,8 @@
   });
 
   // console.log(map.center[0]);
+
+
 
   $.get('https://api.openweathermap.org/data/2.5/forecast', {
     appid: WEATHER_API_KEY,
