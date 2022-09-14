@@ -214,7 +214,7 @@
     center: [-96.803914, 32.792206]
   });
 
-  let marker = new mapboxgl.Marker({draggable: true})
+  var marker = new mapboxgl.Marker({draggable: true})
           .setLngLat([-96.803914, 32.792206])
           .addTo(map);
 
@@ -258,6 +258,7 @@
 
   $('#find').on('click', function(){
 
+
     let findLocation = $('#place').val();
 
     // Geocoding Example...
@@ -266,7 +267,7 @@
       console.log(data);
 
       //create an array variable to sore the lon and lat from the data object
-      let newLocation = [data]
+      var newLocation = [data]
 
       console.log(newLocation);
 
@@ -277,10 +278,16 @@
       console.log(lat);
 
       // create a marker with the new location information
-      let newMarker = new mapboxgl.Marker({draggable: true})
-              .setLngLat([newLocation[0]])
+      var newMarker = new mapboxgl.Marker({draggable: true})
+              .setLngLat(data)
               .addTo(map);
       console.log(newMarker);
+
+      // marker({draggable: true})
+      //           .setLngLat(newLocation)
+      //           .addTo(map);
+      // console.log(marker);
+
 
       marker.on('dragend', function() {
         let coordinates = marker.getLngLat();
@@ -290,8 +297,10 @@
         // let lat = coordinates.lat;
         // let lng = coordinates.lng
 
-        //call the reverseGeoCode function
+        // call the reverseGeoCode function
         // useReverseGeo(lat, lng);
+
+
       });
 
       // Reverse Geocoding Example
