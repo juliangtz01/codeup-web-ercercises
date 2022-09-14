@@ -237,22 +237,22 @@
 
   // console.log(map.center[0]);
 
+  getWeatherInfo(32.792206, -96.803914)
 
-
-  $.get('https://api.openweathermap.org/data/2.5/forecast', {
-    appid: WEATHER_API_KEY,
-    lat: 32.792206,
-    lon: -96.803914,
-    units: 'imperial'
-  }).done(function(data) {
-    // console.log(data);
-
-    // create HTML string
-    let weatherHTML = createHTML(data);
-
-    // update the DOM with the new HTML
-    $('#weather-body').html(weatherHTML);
-  });
+  // $.get('https://api.openweathermap.org/data/2.5/forecast', {
+  //   appid: WEATHER_API_KEY,
+  //   lat: 32.792206,
+  //   lon: -96.803914,
+  //   units: 'imperial'
+  // }).done(function(data) {
+  //   // console.log(data);
+  //
+  //   // create HTML string
+  //   let weatherHTML = createHTML(data);
+  //
+  //   // update the DOM with the new HTML
+  //   $('#weather-body').html(weatherHTML);
+  // });
 
 
 
@@ -273,7 +273,7 @@
       let lat = data[1];
 
       //create a marker with the new location information
-      let newMarker = new mapboxgl.Marker()
+      let newMarker = new mapboxgl.Marker({draggable: true})
               .setLngLat(newLocation[0])
               .addTo(map);
 
