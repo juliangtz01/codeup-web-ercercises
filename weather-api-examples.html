@@ -99,10 +99,10 @@
   {
     // Reverse Geocoding Example
     reverseGeocode({lng: lon, lat: lat}, MAPBOX_TOKEN).then(function(data) {
-      console.log(data);
+      // console.log(data);
       let string = data.split(',');
       // console.log(data);
-      console.log(string);
+      // console.log(string);
       // console.log(string[1]);
 
       if(string.length !== 4)
@@ -263,19 +263,36 @@
     // Geocoding Example...
     geocode(findLocation, MAPBOX_TOKEN).then(function(data) {
       map.setCenter(data);
-      // console.log(data);
+      console.log(data);
 
       //create an array variable to sore the lon and lat from the data object
       let newLocation = [data]
 
-      //create variables to store the lat and log from the data object individually
-      let lon = data[0];
-      let lat = data[1];
+      console.log(newLocation);
 
-      //create a marker with the new location information
+      //create variables to store the lat and log from the data object individually
+      var lon = data[0];
+      console.log(lon);
+      var lat = data[1];
+      console.log(lat);
+
+      // create a marker with the new location information
       let newMarker = new mapboxgl.Marker({draggable: true})
-              .setLngLat(newLocation[0])
+              .setLngLat([newLocation[0]])
               .addTo(map);
+      console.log(newMarker);
+
+      marker.on('dragend', function() {
+        let coordinates = marker.getLngLat();
+
+        console.log(coordinates);
+
+        // let lat = coordinates.lat;
+        // let lng = coordinates.lng
+
+        //call the reverseGeoCode function
+        // useReverseGeo(lat, lng);
+      });
 
       // Reverse Geocoding Example
       reverseGeocode({lng: lon, lat: lat}, MAPBOX_TOKEN).then(function(data) {
@@ -352,6 +369,24 @@
       });
     });
   });
+
+  // // create a marker with the new location information
+  // let newMarker = new mapboxgl.Marker({draggable: true})
+  //         .setLngLat([lon, lat])
+  //         .addTo(map);
+  // console.log(newMarker);
+
+  // marker.on('dragend', function() {
+  //   let coordinates = marker.getLngLat();
+  //
+  //   console.log(coordinates);
+  //
+  //   let lat = coordinates.lat;
+  //   let lng = coordinates.lng
+  //
+  //   //call the reverseGeoCode function
+  //   useReverseGeo(lat, lng);
+  // });
 
 </script>
 
