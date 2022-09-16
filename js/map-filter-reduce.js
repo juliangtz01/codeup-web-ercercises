@@ -76,3 +76,15 @@ const userNames = users.reduce((accumulator, currentName) => {
 }, '')
 
 console.log(userNames);
+
+//Bonus: Use .reduce to get the unique list of languages from the list of users.
+let newArray = [];
+
+const uniqueLang = users.reduce((accumulator, currentLang) => {
+    newArray =  [...accumulator, ...currentLang.languages];
+
+    return [...new Set(newArray)];
+}, [])
+
+console.log(uniqueLang);
+
