@@ -59,3 +59,12 @@ let average = totalYears / users.length
 // console.log(users.length);
 
 console.log(average);
+
+//5. Use .reduce to get the longest email from the list of users.
+
+
+const longestEmail = users.reduce((a, b) =>{
+    return (a.length < b.email.length) ? b.email : a;
+}, users[0].email);
+
+console.log(longestEmail);
