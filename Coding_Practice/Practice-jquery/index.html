@@ -29,11 +29,9 @@
             height: 70px;
 			width: 70px;
 		}
-
 		.card {
-			width: 100%;
+			width: 250px;
 		}
-
 
 
 	</style>
@@ -56,24 +54,97 @@
 </div>
 
 <div class="container">
-	<div class="card d-flex my-5" style="width: 18rem;">
-		<div class="card-header text-center">
-			2022-04-06
+
+		<div class="row gx-5">
+			<div class="card">
+				<div class="col">
+					<div class="card-header text-center">
+						2022-04-06
+					</div>
+					<ul id="current-weather-items">
+						<li class="temp"> </li>
+						<img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon d-flex flex-center">
+						<hr>
+						<li class="weather-item">Humidity: <span id="humi"></span></li>
+						<hr>
+						<li class="weather-item">Wind: <span id="wind"></span></li>
+						<hr>
+						<li class="weather-item">Pressure: <span id="pres"></span></li>
+					</ul>
+				</div>
+			</div>
+			<div class="card">
+				<div class="col">
+					<div class="card-header text-center">
+						2022-04-06
+					</div>
+					<ul>
+						<li class="temp"> </li>
+						<img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon d-flex flex-center">
+						<hr>
+						<li class="weather-item">Humidity:</li>
+						<hr>
+						<li class="weather-item">Wind:</li>
+						<hr>
+						<li class="weather-item">Pressure:</li>
+					</ul>
+				</div>
+			</div>
+			<div class="card">
+				<div class="col">
+					<div class="card-header text-center">
+						2022-04-06
+					</div>
+					<ul>
+						<li class="temp"> </li>
+						<img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon d-flex flex-center">
+						<hr>
+						<li class="weather-item">Humidity:</li>
+						<hr>
+						<li class="weather-item">Wind:</li>
+						<hr>
+						<li class="weather-item">Pressure:</li>
+					</ul>
+				</div>
+			</div>
+			<div class="card">
+				<div class="col">
+					<div class="card-header text-center">
+						2022-04-06
+					</div>
+					<ul>
+						<li class="temp"> </li>
+						<img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon d-flex flex-center">
+						<hr>
+						<li class="weather-item">Humidity:</li>
+						<hr>
+						<li class="weather-item">Wind:</li>
+						<hr>
+						<li class="weather-item">Pressure:</li>
+					</ul>
+				</div>
+			</div>
+			<div class="card">
+				<div class="col">
+					<div class="card-header text-center">
+						2022-04-06
+					</div>
+					<ul>
+						<li class="temp"> </li>
+						<img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon d-flex flex-center">
+						<hr>
+						<li class="weather-item">Humidity:</li>
+						<hr>
+						<li class="weather-item">Wind:</li>
+						<hr>
+						<li class="weather-item">Pressure:</li>
+					</ul>
+				</div>
+			</div>
 		</div>
-		<ul class="list-group list-group-flush" id="current-weather-items">
-			<li class="temp"> </li>
-			<img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-			<hr>
-			<li class="weather-item">Humidity: <span id="humi"></span></li>
-			<hr>
-			<li class="weather-item">Wind: <span id="wind"></span></li>
-			<hr>
-			<li class="weather-item">Pressure: <span id="pres"></span></li>
-
-		</ul>
-	</div>
-
 </div>
+
+
 
 <div id="map"></div>
 
