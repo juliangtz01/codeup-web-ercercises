@@ -21,9 +21,59 @@
             height: 300px;
         }
 
+		ul {
+            list-style: none;
+		}
+
+        .w-icon {
+            height: 70px;
+			width: 70px;
+		}
+
+		.card {
+			width: 100%;
+		}
+
+
+
 	</style>
 </head>
 <body>
+
+<div class="container mb-3 pt-4">
+	<div class="row">
+		<div class="col">
+			Place
+		</div>
+		<div class="col">
+			<input type="text" id="location-search">
+		</div>
+		<div class="col">
+			<button	type="button">Find</button>
+		</div>
+	</div>
+
+</div>
+
+<div class="container">
+	<div class="card d-flex my-5" style="width: 18rem;">
+		<div class="card-header text-center">
+			2022-04-06
+		</div>
+		<ul class="list-group list-group-flush" id="current-weather-items">
+			<li class="temp"> </li>
+			<img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+			<hr>
+			<li class="weather-item">Humidity: <span id="humi"></span></li>
+			<hr>
+			<li class="weather-item">Wind: <span id="wind"></span></li>
+			<hr>
+			<li class="weather-item">Pressure: <span id="pres"></span></li>
+
+		</ul>
+	</div>
+
+</div>
 
 <div id="map"></div>
 
@@ -44,6 +94,59 @@
 
 <script>
 	"use strict";
+
+    function createHTML(data) {
+
+        let date = [];
+        let temp1 = '';
+        let temp2 = '';
+        let humi = '';
+        let pres = '';
+        let icon = '';
+        let wind = '';
+
+        let newDate = '';
+
+
+        let html = '';
+
+        for (let i = 0; i < 40; i += 9) {
+
+            date = data.list[i].dt_txt.split(' ');
+            newDate = date[0];
+
+            temp1 = data.list[i].main.temp_min;
+
+            temp2 = data.list[i].main.temp_max;
+
+            humi = data.list[i].main.humidity;
+
+            wind = data.list[i].wind.speed;
+
+            pres = data.list[i].main.pressure;
+
+            icon = data.list[i].weather[0].icon;
+
+            html += '<div class="card-header">\n' +
+                newDate +
+                '    </div>\n' +
+                '    <ul class="list-group list-group-flush" id="current-weather-items">\n' +
+                '        <li class="temp">' + temp1 + '&degF / ' + temp2 + '&degF </li>\n' +
+                '        <img src="http://openweathermap.org/img/wn/' + icon + '.png" alt="weather icon" class="w-icon">\n' +
+                '        <hr>\n' +
+                '        <li class="weather-item">Humidity: ' + humi + ' </li>\n' +
+                '        <hr>\n' +
+                '        <li class="weather-item">Wind: ' + wind + ' mph</li>\n' +
+                '        <hr>\n' +
+                '        <li class="weather-item">Pressure: ' + pres + ' </li>\n' +
+                '\n' +
+                '    </ul>';
+
+
+        }
+
+        return html;
+    }
 
     // 1. Generate a Mapbox API Key using the steps from above
     mapboxgl.accessToken = MAPBOX_TOKEN;
