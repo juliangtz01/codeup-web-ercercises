@@ -65,9 +65,9 @@ let names = [];
 // });
 
 users.forEach(user => {
-    return emails.push(user.email)
+    emails.push(user.email)
 });
-
+console.log(emails);
 users.forEach(user => {
     return names.push(user.name)
 });
