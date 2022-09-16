@@ -37,7 +37,6 @@
 	</style>
 </head>
 <body>
-
 <div class="container mb-3 pt-4">
 	<div class="row">
 		<div class="col-auto">
@@ -47,104 +46,14 @@
 			<input type="text" id="location-search">
 		</div>
 		<div class="col">
-			<button id="find-btn"	type="button">Find</button>
+			<button id="find-btn" type="button">Find</button>
 		</div>
 	</div>
-
 </div>
 
 <div class="container">
-
-		<div class="row gx-5 my-5">
-			<div class="card d-flex mx-2">
-				<div class="col">
-					<div class="card-header text-center">
-						2022-04-06
-					</div>
-					<ul id="current-weather-items">
-						<li class="temp"> </li>
-						<img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon d-flex flex-center">
-						<hr>
-						<li class="weather-item">Humidity: <span id="humi"></span></li>
-						<hr>
-						<li class="weather-item">Wind: <span id="wind"></span></li>
-						<hr>
-						<li class="weather-item">Pressure: <span id="pres"></span></li>
-					</ul>
-				</div>
-			</div>
-			<div class="card d-flex mx-2">
-				<div class="col">
-					<div class="card-header text-center">
-						2022-04-06
-					</div>
-					<ul>
-						<li class="temp"> </li>
-						<img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon d-flex flex-center">
-						<hr>
-						<li class="weather-item">Humidity:</li>
-						<hr>
-						<li class="weather-item">Wind:</li>
-						<hr>
-						<li class="weather-item">Pressure:</li>
-					</ul>
-				</div>
-			</div>
-			<div class="card d-flex mx-2">
-				<div class="col">
-					<div class="card-header text-center">
-						2022-04-06
-					</div>
-					<ul>
-						<li class="temp"> </li>
-						<img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon d-flex flex-center">
-						<hr>
-						<li class="weather-item">Humidity:</li>
-						<hr>
-						<li class="weather-item">Wind:</li>
-						<hr>
-						<li class="weather-item">Pressure:</li>
-					</ul>
-				</div>
-			</div>
-			<div class="card d-flex mx-2">
-				<div class="col">
-					<div class="card-header text-center">
-						2022-04-06
-					</div>
-					<ul>
-						<li class="temp"> </li>
-						<img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon d-flex flex-center">
-						<hr>
-						<li class="weather-item">Humidity:</li>
-						<hr>
-						<li class="weather-item">Wind:</li>
-						<hr>
-						<li class="weather-item">Pressure:</li>
-					</ul>
-				</div>
-			</div>
-			<div class="card d-flex mx-2">
-				<div class="col">
-					<div class="card-header text-center">
-						2022-04-06
-					</div>
-					<ul>
-						<li class="temp"> </li>
-						<img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon d-flex flex-center">
-						<hr>
-						<li class="weather-item">Humidity:</li>
-						<hr>
-						<li class="weather-item">Wind:</li>
-						<hr>
-						<li class="weather-item">Pressure:</li>
-					</ul>
-				</div>
-			</div>
-		</div>
+		<div id="card-body" class="row gx-5 my-5">
 </div>
-
-
 
 <div id="map"></div>
 
@@ -208,7 +117,7 @@
                 '			<hr>' +
                 '			<li class="weather-item">Humidity: ' + humi + '</li>' +
                 '			<hr>' +
-                '			<li class="weather-item">Wind: ' + wind + '</li>' +
+                '			<li class="weather-item">Wind: ' + wind + 'mph</li>' +
                 '			<hr>' +
                 '			<li class="weather-item">Pressure: ' + pres + '</li>' +
                 '			</ul>' +
@@ -234,10 +143,39 @@
         let location = $('#location-search').val();
 
         // Geocoding Example...
-        geocode(findLocation, MAPBOX_TOKEN).then(function(data) {
+        geocode(location, MAPBOX_TOKEN).then(function(data) {
             map.setCenter(data);
-            console.log(data);
-	})
+            // console.log(data);
+
+            let lat = data[1];
+            let lon = data[0];
+
+
+                $.get('https://api.openweathermap.org/data/2.5/forecast', {
+                appid: WEATHER_API_KEY,
+                // lat: 29.4252,
+                lat: lat,
+                // lon: -98.4916,
+                lon: lon,
+                units: 'imperial'
+            }).done(function(data) {
+                // console.log(data);
+
+                // create HTML string
+                let weatherHTML = createHTML(data);
+
+                // update the DOM with the new HTML
+                $('#card-body').html(weatherHTML);
+
+                // dealing with time
+                // convert API date/time response to JS Date Object
+                // ... new Date(1629461117 * 1000)
+                // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
+            }).fail(function(error) {
+                console.log(error);
+            });
+        });
+	});
 
 
 </script>
