@@ -40,14 +40,14 @@
 
 <div class="container mb-3 pt-4">
 	<div class="row">
-		<div class="col">
+		<div class="col-auto">
 			Place
 		</div>
-		<div class="col">
+		<div class="col-2">
 			<input type="text" id="location-search">
 		</div>
 		<div class="col">
-			<button	type="button">Find</button>
+			<button id="find-btn"	type="button">Find</button>
 		</div>
 	</div>
 
@@ -55,8 +55,8 @@
 
 <div class="container">
 
-		<div class="row gx-5">
-			<div class="card">
+		<div class="row gx-5 my-5">
+			<div class="card d-flex mx-2">
 				<div class="col">
 					<div class="card-header text-center">
 						2022-04-06
@@ -73,7 +73,7 @@
 					</ul>
 				</div>
 			</div>
-			<div class="card">
+			<div class="card d-flex mx-2">
 				<div class="col">
 					<div class="card-header text-center">
 						2022-04-06
@@ -90,7 +90,7 @@
 					</ul>
 				</div>
 			</div>
-			<div class="card">
+			<div class="card d-flex mx-2">
 				<div class="col">
 					<div class="card-header text-center">
 						2022-04-06
@@ -107,7 +107,7 @@
 					</ul>
 				</div>
 			</div>
-			<div class="card">
+			<div class="card d-flex mx-2">
 				<div class="col">
 					<div class="card-header text-center">
 						2022-04-06
@@ -124,7 +124,7 @@
 					</ul>
 				</div>
 			</div>
-			<div class="card">
+			<div class="card d-flex mx-2">
 				<div class="col">
 					<div class="card-header text-center">
 						2022-04-06
@@ -198,22 +198,22 @@
 
             icon = data.list[i].weather[0].icon;
 
-            html += '<div class="card-header">\n' +
-                newDate +
-                '    </div>\n' +
-                '    <ul class="list-group list-group-flush" id="current-weather-items">\n' +
-                '        <li class="temp">' + temp1 + '&degF / ' + temp2 + '&degF </li>\n' +
-                '        <img src="http://openweathermap.org/img/wn/' + icon + '.png" alt="weather icon" class="w-icon">\n' +
-                '        <hr>\n' +
-                '        <li class="weather-item">Humidity: ' + humi + ' </li>\n' +
-                '        <hr>\n' +
-                '        <li class="weather-item">Wind: ' + wind + ' mph</li>\n' +
-                '        <hr>\n' +
-                '        <li class="weather-item">Pressure: ' + pres + ' </li>\n' +
-                '\n' +
-                '    </ul>';
-
-
+            html += '<div class="card d-flex mx-2">' +
+                '		<div class="col">' +
+                '			<div class="card-header text-center">' + newDate +
+                '			</div>' +
+                '			<ul id="current-weather-items">' +
+                '			<li class="temp">' + temp1 + '&degF / ' + temp2 + '&degF </li>' +
+                '			<img src="http://openweathermap.org/img/wn/' + icon + '.png" alt="weather icon" class="w-icon d-flex flex-center">' +
+                '			<hr>' +
+                '			<li class="weather-item">Humidity: ' + humi + '</li>' +
+                '			<hr>' +
+                '			<li class="weather-item">Wind: ' + wind + '</li>' +
+                '			<hr>' +
+                '			<li class="weather-item">Pressure: ' + pres + '</li>' +
+                '			</ul>' +
+                '			</div>' +
+                '			</div>';
         }
 
         return html;
@@ -229,6 +229,17 @@
         // starting position [lng, lat]
         center: [-96.803914, 32.792206]
     });
+
+    $('#find-btn').on('click', function(){
+        let location = $('#location-search').val();
+
+        // Geocoding Example...
+        geocode(findLocation, MAPBOX_TOKEN).then(function(data) {
+            map.setCenter(data);
+            console.log(data);
+	})
+
+
 </script>
 
 </body>
