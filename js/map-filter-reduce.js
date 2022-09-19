@@ -38,8 +38,8 @@ const users = [
 
 //2. Use .filter to create an array of user objects where each user object has at least 3 languages in the languages array.
 // console.log(users);
-const theLanguages = users.filter(n => n.languages.length <= 3);
-console.log(theLanguages); // [2, 4, 6, 8, 10]
+const theLanguages = users.filter(n => n.languages.length % 3 === 0);
+console.log(theLanguages);
 
 //3. Use .map to create an array of strings where each element is a user's email address
 
@@ -53,10 +53,6 @@ const totalYears = users.reduce((total, person) => {
 }, 0)
 
 let average = totalYears / users.length
-//
-// console.log(totalYears);
-//
-// console.log(users.length);
 
 console.log(average);
 
