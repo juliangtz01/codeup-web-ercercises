@@ -24,6 +24,10 @@
       height: 300px;
     }
 
+    .card {
+      width: 250px;
+    }
+
   </style>
 </head>
 <body>
@@ -47,7 +51,7 @@
     </div>
   </div>
 
-  <div class="container my-4 p-0">
+  <div class="container my-4 p-8">
     <div class="d-flex" id="weather-card">
       <div id="weather-body" class="d-flex">
         </div>
@@ -84,7 +88,6 @@
       lon: lon,
       units: 'imperial'
     }).done(function(data) {
-      // console.log(data);
 
       // create HTML string
       let weatherHTML = createHTML(data);
@@ -120,6 +123,8 @@
   }
 
   function createHTML(data) {
+
+    console.log(data);
 
     //create a variable array to hold the date and time
     let fullDate = data.list[0].dt_txt.split(' ');
@@ -188,7 +193,7 @@
       //create a variable to hold the http reference to openweathermap.org and the icon code
       iconURL = "http://openweathermap.org/img/w/" + iconCode + ".png";
 
-      html += '<div class="card mx-3 p-2">\n' +
+      html += '<div class="card mx-2 p-3 carsousel-slide carousel-inner carousel-item-active" data-bs-ride="carousel">\n' +
               '  <div id="date" class="text-center">'+ fullDate[0] + '</div>\n' +
               '  <div id="temp" class="text-center">' + maxTemp + '&degF' +  minTemp + '&degF</div>\n' +
               '  <div id="icon" class="text-center">\n' +
@@ -400,20 +405,4 @@
 </script>
 
 </body>
-</html>
-white_check_mark
-+1
-raised_hands
-
-
-
-
-
-
-
-
-
-
-
-
 </html>
