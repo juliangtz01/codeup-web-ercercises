@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+
+<script>
+	fetch('https://saber-dear-spoonbill.glitch.me/books').then(resp => resp.json()).then(data => console.log(data));
+
+    const newBook = {
+        "title": "Dune",
+		"author": "Frank Herbert"
+	};
+
+    //add data
+
+    // fetch("https://saber-dear-spoonbill.glitch.me/books", {
+    //     method: 'POST',
+	// 	headers: {
+    //         'Content-Type': 'application/json',
+	// 	},
+	// 	body: JSON.stringify(newBook),
+	// }).then(() => fetch("https://saber-dear-spoonbill.glitch.me/books")).then(resp => resp.json()).then(data => console.log(data));
+
+    // const editBook = {
+    //     // "title": "Dune Messiah",
+    //     // "author": "Frank Herbert"
+    //     "author": "Frank H"
+    // };
+	//
+	// //update data
+	// fetch('https://saber-dear-spoonbill.glitch.me/books/7', {
+    //     method: 'PATCH',
+    //     	headers: {
+    //             'Content-Type': 'application/json',
+    //     	},
+    //     	body: JSON.stringify(editBook),
+    //     }).then(() => fetch('https://saber-dear-spoonbill.glitch.me/books').then(resp => resp.json()).then(data => console.log(data)));
+
+    //delete data
+
+
+
+</script>
+</body>
+</html>
